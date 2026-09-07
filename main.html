@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>Egresados</title>
+</head>
+<body>
+
+  <!-- ================= SECCIÓN DE INTRODUCCIÓN ================= -->
+  <section class="intro-container">
+    <div class="intro-badge">Propuesta Estratégica</div>
+    <h1 class="intro-title">Visualización e Impacto de Egresados</h1>
+    <p class="intro-description">
+      El objetivo de esta plataforma interactiva es reunir la distribución geográfica, la trayectoria profesional y el testimonio directo de nuestros egresados a nivel nacional e internacional. A continuación, se detallan los componentes principales de este modelo:
+    </p>
+
+    <div class="intro-cards-grid">
+      <div class="intro-card">
+        <div class="intro-card-icon">🌐</div>
+        <div class="intro-card-content">
+          <h3 class="intro-card-title">Idea 1: Cartografía Dinámica</h3>
+          <p class="intro-card-text">
+            Un dashboard interactivo en 3D que alterna entre el panorama global y la distribución detallada por departamentos en Colombia.
+          </p>
+        </div>
+      </div>
+
+      <div class="intro-card">
+        <div class="intro-card-icon">🚀</div>
+        <div class="intro-card-content">
+          <h3 class="intro-card-title">Idea 2: Trayectoria e Impacto</h3>
+          <p class="intro-card-text">
+            Línea de tiempo de hitos profesionales complementada con testimonios dinámicos en texto y video de la comunidad de graduados.
+          </p>
+        </div>
+      </div>
+
+        <div class="intro-card">
+        <div class="intro-card-icon">.👩‍🎓</div>
+        <div class="intro-card-content">
+          <h3 class="intro-card-title">Idea 3: Datos representativos</h3>
+          <p class="intro-card-text">
+            Una seccion que agrupe los principales datos de egresados de la universidad, como la empleabilidad ETC.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TÍTULO DE LA SECCIÓN INTERACTIVA -->
+  <h2 class="main-title">Idea número 1</h2>
+
+  <!-- CONTENEDOR FLIP GLOBAL -->
+  <div class="dashboard-flip-wrapper">
+    <div class="dashboard-inner" id="dashboardInner">
+      
+      <!-- ================= VISTA FRONTAL: MUNDIAL ================= -->
+      <div class="dashboard-face dashboard-front">
+        
+        <!-- TARJETA FRONTAL -->
+        <div class="card-left">
+          <button class="flip-btn" id="flipToColombiaBtn" title="Ver Departamentos de Colombia">
+            🔄 Colombia
+          </button>
+
+          <h2 class="card-title">Egresados</h2>
+          
+          <div class="metrics">
+            <span class="total-sales">91</span>
+            <span class="badge">100% Total</span>
+          </div>
+          
+          <p class="subtitle">Países de nuestros egresados</p>
+
+          <ul class="country-list">
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot usa"></span>
+                <span>Estados Unidos <sub>US</sub></span>
+              </div>
+              <span class="sales-count">25</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot canada"></span>
+                <span>Canadá <sub>CA</sub></span>
+              </div>
+              <span class="sales-count">11</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot peru"></span>
+                <span>Perú <sub>PE</sub></span>
+              </div>
+              <span class="sales-count">10</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot alemania"></span>
+                <span>Alemania <sub>DE</sub></span>
+              </div>
+              <span class="sales-count">8</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot espana"></span>
+                <span>España <sub>ES</sub></span>
+              </div>
+              <span class="sales-count">8</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot australia"></span>
+                <span>Australia <sub>AU</sub></span>
+              </div>
+              <span class="sales-count">7</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot mexico"></span>
+                <span>México <sub>MX</sub></span>
+              </div>
+              <span class="sales-count">5</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot other"></span>
+                <span>Otros (11 países)</span>
+              </div>
+              <span class="sales-count">17</span>
+            </li>
+          </ul>
+
+          <div id="detailPanel" class="country-detail-panel">
+            <div class="detail-label">País Seleccionado</div>
+            <div id="detailCountryName" class="detail-country-name">-</div>
+            <div class="detail-label" style="margin-top: 8px;">Egresados Registrados</div>
+            <div id="detailStudentsCount" class="detail-students-count">0</div>
+          </div>
+        </div>
+
+        <!-- MAPA MUNDIAL DERECHA -->
+        <div class="map-right" id="mapRightWorld">
+          <div id="tooltipWorld" class="tooltip"></div>
+          <div class="ag-canvas" id="world-map-container"></div>
+        </div>
+
+      </div>
+
+      <!-- ================= VISTA TRASERA: COLOMBIA ================= -->
+      <div class="dashboard-face dashboard-back">
+        
+        <!-- TARJETA TRASERA -->
+        <div class="card-left">
+          <button class="flip-btn" id="flipToWorldBtn" title="Ver Países del Mundo">
+            🌐 Mundial
+          </button>
+
+          <h2 class="card-title">Egresados</h2>
+          
+          <div class="metrics">
+            <span class="total-sales">775</span>
+            <span class="badge col-badge">100% Colombia</span>
+          </div>
+          
+          <p class="subtitle">Departamentos de Colombia</p>
+
+          <ul class="country-list">
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot bogota"></span>
+                <span>Bogotá D.C. <sub>DC</sub></span>
+              </div>
+              <span class="sales-count">645</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot cundinamarca"></span>
+                <span>Cundinamarca <sub>CUN</sub></span>
+              </div>
+              <span class="sales-count">59</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot antioquia"></span>
+                <span>Antioquia <sub>ANT</sub></span>
+              </div>
+              <span class="sales-count">15</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot meta"></span>
+                <span>Meta <sub>MET</sub></span>
+              </div>
+              <span class="sales-count">6</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot atlantico"></span>
+                <span>Atlántico <sub>ATL</sub></span>
+              </div>
+              <span class="sales-count">5</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot tolima"></span>
+                <span>Tolima <sub>TOL</sub></span>
+              </div>
+              <span class="sales-count">3</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot otros-dept"></span>
+                <span>Otros dptos</span>
+              </div>
+              <span class="sales-count">9</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot no-especifica"></span>
+                <span>No especifica</span>
+              </div>
+              <span class="sales-count">33</span>
+            </li>
+          </ul>
+
+          <div id="detailPanelDept" class="country-detail-panel">
+            <div class="detail-label">Departamento</div>
+            <div id="detailDeptName" class="detail-country-name">-</div>
+            <div class="detail-label" style="margin-top: 8px;">Egresados Registrados</div>
+            <div id="detailDeptStudentsCount" class="detail-students-count">0</div>
+          </div>
+        </div>
+
+        <!-- MAPA COLOMBIA DERECHA -->
+        <div class="map-right" id="mapRightColombia">
+          <div id="tooltipColombia" class="tooltip"></div>
+          <div class="ag-canvas" id="colombia-map-container"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECCIÓN INFOGRAFÍA DE HITOS DE EGRESADOS -->
+   <h2 class="main-title">Idea número 2</h2>
+  <section class="timeline-container">
+    <h2 class="timeline-title">Hitos de los Egresados</h2>
+    <div class="chevron-timeline">
+
+      <div class="step-item step-1">
+        <div class="chevron-box">
+          <div class="chevron-icon">💡</div>
+          <div class="chevron-title">Graduación</div>
+          <div class="chevron-subtitle">Culminación del programa académico con éxito.</div>
+        </div>
+        <div class="circle-number">01</div>
+        <div class="connector-line"></div>
+        <div class="connector-dot"></div>
+        <div class="hito-content">
+          <div class="hito-title">Título Profesional</div>
+          <div class="hito-text">Entrega de títulos y ceremonia oficial.</div>
+        </div>
+      </div>
+
+      <div class="step-item step-2">
+        <div class="chevron-box">
+          <div class="chevron-icon">⏱️</div>
+          <div class="chevron-title">Primer Empleo</div>
+          <div class="chevron-subtitle">Vinculación laboral en los primeros meses.</div>
+        </div>
+        <div class="circle-number">02</div>
+        <div class="connector-line"></div>
+        <div class="connector-dot"></div>
+        <div class="hito-content">
+          <div class="hito-title">Inserción Laboral</div>
+          <div class="hito-text">Alta empleabilidad en empresas del sector.</div>
+        </div>
+      </div>
+
+      <div class="step-item step-3">
+        <div class="chevron-box">
+          <div class="chevron-icon">💼</div>
+          <div class="chevron-title">Posgrado</div>
+          <div class="chevron-subtitle">Inicio de especializaciones y maestrías.</div>
+        </div>
+        <div class="circle-number">03</div>
+        <div class="connector-line"></div>
+        <div class="connector-dot"></div>
+        <div class="hito-content">
+          <div class="hito-title">Especialización</div>
+          <div class="hito-text">Continuidad académica nacional e internacional.</div>
+        </div>
+      </div>
+
+      <div class="step-item step-4">
+        <div class="chevron-box">
+          <div class="chevron-icon">🚀</div>
+          <div class="chevron-title">Emprendimiento</div>
+          <div class="chevron-subtitle">Creación de proyectos y startups.</div>
+        </div>
+        <div class="circle-number">04</div>
+        <div class="connector-line"></div>
+        <div class="connector-dot"></div>
+        <div class="hito-content">
+          <div class="hito-title">Fundación Empresa</div>
+          <div class="hito-text">Generación de empleo e innovación propia.</div>
+        </div>
+      </div>
+
+      <div class="step-item step-5">
+        <div class="chevron-box">
+          <div class="chevron-icon">📊</div>
+          <div class="chevron-title">Liderazgo</div>
+          <div class="chevron-subtitle">Ascenso a cargos directivos.</div>
+        </div>
+        <div class="circle-number">05</div>
+        <div class="connector-line"></div>
+        <div class="connector-dot"></div>
+        <div class="hito-content">
+          <div class="hito-title">Cargos Directivos</div>
+          <div class="hito-text">Gestión estratégica de equipos y procesos.</div>
+        </div>
+      </div>
+
+      <div class="step-item step-6">
+        <div class="chevron-box">
+          <div class="chevron-icon">🚩</div>
+          <div class="chevron-title">Internacional</div>
+          <div class="chevron-subtitle">Consolidación en el mercado global.</div>
+        </div>
+        <div class="circle-number">06</div>
+        <div class="connector-line"></div>
+        <div class="connector-dot"></div>
+        <div class="hito-content">
+          <div class="hito-title">Impacto Global</div>
+          <div class="hito-text">Egresados trabajando internacionalmente.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE OPINIONES Y VIDEO TESTIMONIOS (CARRUSEL DINÁMICO) -->
+  <section class="testimonials-container">
+    <div class="testimonials-header">
+      <div>
+        <h2 class="testimonials-title">Opiniones de Nuestros Egresados</h2>
+        <p class="testimonials-subtitle">Conoce el impacto real de nuestra comunidad en el mundo</p>
+      </div>
+      <div class="carousel-controls">
+        <button class="control-btn" id="prevBtn" title="Anterior">←</button>
+        <button class="control-btn" id="nextBtn" title="Siguiente">→</button>
+      </div>
+    </div>
+
+    <div class="carousel-track-container">
+      <div class="carousel-track" id="carouselTrack">
+
+        <!-- TARJETA 1: VIDEO -->
+        <div class="testimonial-card video-card" onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Carlos Pérez - Testimonio')">
+          <div class="card-type-badge badge-video">🎥 Video Testimonio</div>
+          <div class="video-thumbnail bg-1">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <span class="video-duration">01:45</span>
+          </div>
+          <div class="card-body">
+            <p class="testimonial-text">
+              “Es una alternativa buena de estudio, enfocada en lo que se requiere y con las practicas vitales para el desempeño de cualquier carrera ”
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar avatar-blue">CP</div>
+              <div class="author-info">
+                <h4 class="author-name">Paola chavez Espinel </h4>
+                <span class="author-role">Finanzas y Comercio Exterior · Bogotá DC</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TARJETA 2: TEXTO -->
+        <div class="testimonial-card">
+          <div class="card-type-badge badge-text">💬 Opinión</div>
+          <div class="quote-icon">“</div>
+          <div class="card-body">
+            <p class="testimonial-text">
+              Como emprendedor es importante la información que recibí y creo puede ser fundamental a futuros emprendedores con sus respectivas actualizaciones 
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar avatar-teal">AM</div>
+              <div class="author-info">
+                <h4 class="author-name">Wilson Cáceres H</h4>
+                <span class="author-role">  Emprendedor · Bogotá D.C.</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TARJETA 3: VIDEO -->
+        <div class="testimonial-card video-card" onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'David Rodríguez - Testimonio')">
+          <div class="card-type-badge badge-video">🎥 Video Testimonio</div>
+          <div class="video-thumbnail bg-2">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <span class="video-duration">02:10</span>
+          </div>
+          <div class="card-body">
+            <p class="testimonial-text">
+              “Uniempresarial tiene un plus y es su metodología de enseñanza y prácticas, creo que da un valor agregado a los egresados de la universidad a tener una visión real del ámbito corporativo ”
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar avatar-orange">DR</div>
+              <div class="author-info">
+                <h4 class="author-name">Iván Stiven Bonilla Ramirez</h4>
+                <span class="author-role">Finanzas y Comercio Exterior · Bogotá DC</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TARJETA 4: TEXTO -->
+        <div class="testimonial-card">
+          <div class="card-type-badge badge-text">💬 Opinión</div>
+          <div class="quote-icon">“</div>
+          <div class="card-body">
+            <p class="testimonial-text">
+             Es la única universidad que ofrece prácticas empresariales continuas y de valor. He estudiado en muchas universidades y ninguna ofrece este estilo de educación.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar avatar-purple">LG</div>
+              <div class="author-info">
+                <h4 class="author-name">Luz katerina gomez parra</h4>
+                <span class="author-role">Asistente administrativa  · Australia</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL FLOTANTE PARA REPRODUCIR VIDEO -->
+  <div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeVideoModal(null)">&times;</span>
+      <h3 id="modalTitle" class="modal-video-title">Video Testimonio</h3>
+      <div class="iframe-container">
+        <iframe id="videoIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+
+  <h2 class="main-title">Idea número 3</h2>
+
+  <!-- BANNER PROMOCIONAL DE BENEFICIOS -->
+  <section class="banner-container">
+    <div class="banner-card">
+      <!-- FONDO DE IMAGEN / CAPA OSCURA -->
+      <div class="banner-overlay"></div>
+
+      <!-- CONTENIDO DE TEXTO Y BOTÓN -->
+      <div class="banner-content">
+        <h2 class="banner-title">Lo que nos destaca</h2>
+        <p class="banner-highlight">¡Tenemos lo mejor!</p>
+        <a href="#datos" class="banner-btn">
+          <span>Conocer más</span>
+          <span class="btn-icon">v</span>
+        </a>
+      </div>
+
+      <!-- ELEMENTOS VISUALES / IMAGEN DE PERSONAS -->
+      <div class="banner-image-wrapper">
+        <img src="https://uniempresarial.edu.co/wp-content/uploads/2024/06/generative-ai-graduation-ceremony-scaled_11zon-1024x574.jpg" alt="Estudiantes disfrutando de beneficios" class="banner-img">
+      </div>
+
+      <!-- INDICADORES DEL CARRUSEL (DOTS) -->
+      <div class="banner-dots">
+        <span class="dot-item"></span>
+        <span class="dot-item active"></span>
+        <span class="dot-item"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE METRICAS Y DATOS DE EMPLEABILIDAD (4 TARJETAS) -->
+  <!-- SECCIÓN DE MÉTRICAS Y DATOS DE EMPLEABILIDAD (4 TARJETAS CON ANIMACIÓN) -->
+  <section class="stats-cards-container" id="datos">
+    <div class="stats-cards-grid">
+
+      <!-- TARJETA 1 -->
+      <div class="stat-card">
+        <div class="stat-card-icon">💬</div>
+        
+        <!-- DATO NUMÉRICO ANIMADO -->
+        <div class="stat-number-wrapper">
+          <span class="counter-number" data-target="88">0</span><span class="counter-unit">%</span>
+        </div>
+
+        <h3 class="stat-author-name">Tasa de Empleabilidad</h3>
+        <span class="stat-location">Egresados Vinculados</span>
+        
+        <p class="stat-description">
+          El 88% de nuestros egresados logra vincularse laboralmente en los primeros 6 meses tras su titulación en empresas de alto impacto.
+        </p>
+      </div>
+
+      <!-- TARJETA 2 -->
+      <div class="stat-card">
+        <div class="stat-card-icon">📢</div>
+        
+        <!-- DATO NUMÉRICO ANIMADO -->
+        <div class="stat-number-wrapper">
+          <span class="counter-number" data-target="775">0</span><span class="counter-unit">+</span>
+        </div>
+
+        <h3 class="stat-author-name">Egresados Nacionales</h3>
+        <span class="stat-location">Colombia</span>
+        
+        <p class="stat-description">
+          Comunidad de egresados activos y posicionados en diferentes departamentos y sectores clave del país.
+        </p>
+      </div>
+
+      <!-- TARJETA 3 -->
+      <div class="stat-card">
+        <div class="stat-card-icon">💼</div>
+        
+        <!-- DATO NUMÉRICO ANIMADO -->
+        <div class="stat-number-wrapper">
+          <span class="counter-number" data-target="91">0</span><span class="counter-unit">+</span>
+        </div>
+
+        <h3 class="stat-author-name">Presencia Internacional</h3>
+        <span class="stat-location">17 Países</span>
+        
+        <p class="stat-description">
+          Graduados ejerciendo su profesión y liderando proyectos en América, Europa y Oceanía.
+        </p>
+      </div>
+
+      <!-- TARJETA 4 -->
+      <div class="stat-card">
+        <div class="stat-card-icon">🌟</div>
+        
+        <!-- DATO NUMÉRICO ANIMADO -->
+        <div class="stat-number-wrapper">
+          <span class="counter-number" data-target="94">0</span><span class="counter-unit">%</span>
+        </div>
+
+        <h3 class="stat-author-name">Satisfacción Profesional</h3>
+        <span class="stat-location">Desarrollo Profesional</span>
+        
+        <p class="stat-description">
+          Egresados que afirman que la preparación recibida fue determinante para alcanzar sus metas laborales.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SCRIPT PARA ANIMACIÓN DE CONTEO PROGRESIVO -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll('.counter-number');
+
+      const animateCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const duration = 1800; // Duración total de la animación en milisegundos
+        const frameDuration = 1000 / 60; // 60 FPS
+        const totalFrames = Math.round(duration / frameDuration);
+        let frame = 0;
+
+        const countUp = setInterval(() => {
+          frame++;
+          // Función de desaceleración (easeOutQuad)
+          const progress = frame / totalFrames;
+          const currentCount = Math.round(target * (1 - Math.pow(1 - progress, 2)));
+
+          counter.innerText = currentCount.toLocaleString();
+
+          if (frame === totalFrames) {
+            counter.innerText = target.toLocaleString();
+            clearInterval(countUp);
+          }
+        }, frameDuration);
+      };
+
+      // Observador para activar la animación solo cuando la tarjeta sea visible en pantalla
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target.querySelector('.counter-number');
+            if (counter && !counter.classList.contains('animated')) {
+              counter.classList.add('animated');
+              animateCounter(counter);
+            }
+          }
+        });
+      }, { threshold: 0.3 });
+
+      document.querySelectorAll('.stat-card').forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
+
+  <!-- SCRIPTS D3 & TOPOJSON -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script>
+    // CONTROL DEL FLIP DEL DASHBOARD
+    const dashboardInner = document.getElementById('dashboardInner');
+    document.getElementById('flipToColombiaBtn').addEventListener('click', () => {
+      dashboardInner.classList.add('flipped');
+    });
+    document.getElementById('flipToWorldBtn').addEventListener('click', () => {
+      dashboardInner.classList.remove('flipped');
+    });
+
+    // 1. DATOS DE PAÍSES INTERNACIONALES
+    const worldStudentData = {
+      "US": { name: "Estados Unidos", students: 25 },
+      "CA": { name: "Canadá", students: 11 },
+      "PE": { name: "Perú", students: 10 },
+      "DE": { name: "Alemania", students: 8 },
+      "ES": { name: "España", students: 8 },
+      "AU": { name: "Australia", students: 7 },
+      "MX": { name: "México", students: 5 },
+      "DO": { name: "República Dominicana", students: 3 },
+      "PA": { name: "Panamá", students: 2 },
+      "JP": { name: "Japón", students: 2 },
+      "MT": { name: "Malta", students: 2 },
+      "IT": { name: "Italia", students: 2 },
+      "BO": { name: "Bolivia", students: 1 },
+      "CR": { name: "Costa Rica", students: 1 },
+      "EC": { name: "Ecuador", students: 1 },
+      "NL": { name: "Países Bajos", students: 1 },
+      "CL": { name: "Chile", students: 1 }
+    };
+
+    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+      .then(res => res.json())
+      .then(world => {
+        const countries = topojson.feature(world, world.objects.countries).features;
+        const width = 1000, height = 500;
+        const projection = d3.geoMercator().scale(130).translate([width / 2, height / 1.5]);
+        const pathGenerator = d3.geoPath().projection(projection);
+
+        const isoMapping = {
+          "840": "US", "124": "CA", "604": "PE", "276": "DE", "724": "ES",
+          "036": "AU", "484": "MX", "214": "DO", "591": "PA", "392": "JP",
+          "470": "MT", "380": "IT", "068": "BO", "188": "CR", "218": "EC",
+          "528": "NL", "152": "CL"
+        };
+
+        const svg = d3.select("#world-map-container")
+          .append("svg").attr("class", "ag-canvas_svg").attr("viewBox", `0 0 ${width} ${height}`);
+
+        const tooltip = d3.select("#tooltipWorld");
+        const mapRight = document.getElementById("mapRightWorld");
+
+        svg.selectAll("path")
+          .data(countries).enter().append("path")
+          .attr("d", pathGenerator)
+          .attr("id", d => isoMapping[d.id] || `country-${d.id}`)
+          .on("mouseover", (event, d) => {
+            const code = isoMapping[d.id];
+            if (worldStudentData[code]) {
+              tooltip.style("display", "block")
+                .html(`<strong>${worldStudentData[code].name}</strong><br/>🎓 Egresados: ${worldStudentData[code].students.toLocaleString()}`);
+            }
+          })
+          .on("mousemove", (event) => {
+            const bounds = mapRight.getBoundingClientRect();
+            tooltip.style("left", (event.clientX - bounds.left + 10) + "px")
+                   .style("top", (event.clientY - bounds.top + 10) + "px");
+          })
+          .on("mouseout", () => tooltip.style("display", "none"))
+          .on("click", (event, d) => {
+            const code = isoMapping[d.id];
+            const detailPanel = document.getElementById("detailPanel");
+            if (worldStudentData[code]) {
+              document.getElementById("detailCountryName").innerText = worldStudentData[code].name;
+              document.getElementById("detailStudentsCount").innerText = worldStudentData[code].students.toLocaleString();
+              detailPanel.style.display = "block";
+            } else {
+              detailPanel.style.display = "none";
+            }
+          });
+      });
+
+    // 2. MAPA DE COLOMBIA CON PUNTOS SEGÚN DATOS REALES
+    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json')
+      .then(res => res.json())
+      .then(world10m => {
+        const countries = topojson.feature(world10m, world10m.objects.countries).features;
+        const colombiaGeo = countries.find(c => c.id === "170");
+
+        const width = 1000, height = 500;
+        const projection = d3.geoMercator()
+          .fitExtent([[80, 20], [width - 80, height - 20]], colombiaGeo);
+
+        const pathGenerator = d3.geoPath().projection(projection);
+
+        const svg = d3.select("#colombia-map-container")
+          .append("svg").attr("class", "ag-canvas_svg").attr("viewBox", `0 0 ${width} ${height}`);
+
+        const tooltip = d3.select("#tooltipColombia");
+        const mapRight = document.getElementById("mapRightColombia");
+
+        svg.append("path")
+          .datum(colombiaGeo)
+          .attr("d", pathGenerator)
+          .attr("fill", "#f1f5f9")
+          .attr("stroke", "#94a3b8")
+          .attr("stroke-width", "1.5");
+
+        const deptPoints = [
+          { id: "DEPT_DC", name: "Bogotá D.C.", students: 645, coords: [-74.0721, 4.7110], r: 32, color: "#0e1f87" },
+          { id: "DEPT_CUN", name: "Cundinamarca", students: 59, coords: [-74.1300, 5.0200], r: 18, color: "#ea580c" },
+          { id: "DEPT_ANT", name: "Antioquia", students: 15, coords: [-75.5636, 6.2518], r: 14, color: "#16a34a" },
+          { id: "DEPT_MET", name: "Meta", students: 6, coords: [-73.6300, 4.1400], r: 10, color: "#a855f7" },
+          { id: "DEPT_ATL", name: "Atlántico", students: 5, coords: [-74.7813, 10.9685], r: 9, color: "#06b6d4" },
+          { id: "DEPT_TOL", name: "Tolima", students: 3, coords: [-75.2300, 4.4300], r: 8, color: "#eab308" },
+          { id: "DEPT_BOY", name: "Boyacá", students: 2, coords: [-73.3600, 5.5300], r: 7, color: "#64748b" },
+          { id: "DEPT_CAS", name: "Casanare", students: 2, coords: [-72.4000, 5.3300], r: 7, color: "#64748b" },
+          { id: "DEPT_SAN", name: "Santander", students: 2, coords: [-73.1198, 7.1254], r: 7, color: "#64748b" },
+          { id: "DEPT_NAR", name: "Nariño", students: 1, coords: [-77.2800, 1.2100], r: 6, color: "#64748b" },
+          { id: "DEPT_BOL", name: "Bolívar", students: 1, coords: [-75.5000, 10.4000], r: 6, color: "#64748b" },
+          { id: "DEPT_VAC", name: "Valle del Cauca", students: 1, coords: [-76.5225, 3.4372], r: 6, color: "#64748b" }
+        ];
+
+        svg.selectAll("circle")
+          .data(deptPoints)
+          .enter()
+          .append("circle")
+          .attr("cx", d => projection(d.coords)[0])
+          .attr("cy", d => projection(d.coords)[1])
+          .attr("r", d => d.r)
+          .attr("fill", d => d.color)
+          .attr("stroke", "#ffffff")
+          .attr("stroke-width", "2")
+          .attr("style", "cursor: pointer; opacity: 0.95;")
+          .on("mouseover", (event, d) => {
+            tooltip.style("display", "block")
+              .html(`<strong>${d.name}</strong><br/>🎓 Egresados: ${d.students.toLocaleString()}`);
+          })
+          .on("mousemove", (event) => {
+            const bounds = mapRight.getBoundingClientRect();
+            tooltip.style("left", (event.clientX - bounds.left + 10) + "px")
+                   .style("top", (event.clientY - bounds.top + 10) + "px");
+          })
+          .on("mouseout", () => tooltip.style("display", "none"))
+          .on("click", (event, d) => {
+            const detailPanel = document.getElementById("detailPanelDept");
+            document.getElementById("detailDeptName").innerText = d.name;
+            document.getElementById("detailDeptStudentsCount").innerText = d.students.toLocaleString();
+            detailPanel.style.display = "block";
+          });
+      });
+
+    // 3. CARRUSEL Y MODAL DE TESTIMONIOS
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const cardWidth = 360;
+
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    });
+
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
+
+    function openVideoModal(videoUrl, title) {
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('videoIframe');
+      const modalTitle = document.getElementById('modalTitle');
+
+      iframe.src = videoUrl + "?autoplay=1";
+      modalTitle.innerText = title;
+      modal.style.display = 'flex';
+    }
+
+    function closeVideoModal(event) {
+      if (!event || event.target.id === 'videoModal') {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('videoIframe');
+        modal.style.display = 'none';
+        iframe.src = '';
+      }
+    }
+  </script>
+
+</body>
+</html>
