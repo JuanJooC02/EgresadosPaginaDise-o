@@ -810,6 +810,15 @@ body {
   letter-spacing: 2px;
 }
 
+.videosEgresados {
+
+   max-width: 1250px;
+  margin: 40px auto 0 auto;
+  background: #ffffff;
+  padding: 40px 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
+}
 /* =========================================================
    VENTANA MODAL FLOTANTE DE VIDEO
    ========================================================= */
