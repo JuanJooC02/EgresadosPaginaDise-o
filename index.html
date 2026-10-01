@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css">
-  <title>Egresados | Uniempresarial</title>
+  <title>Egresados</title>
 </head>
 <body>
 
@@ -13,7 +13,7 @@
     <div class="intro-badge">Propuesta Estratégica</div>
     <h1 class="intro-title">Visualización e Impacto de Egresados</h1>
     <p class="intro-description">
-      Esta plataforma interactiva reúne la distribución geográfica, la trayectoria profesional y el testimonio directo de nuestros egresados a nivel nacional e internacional. A continuación, se detallan los componentes principales de este modelo:
+      El objetivo de esta plataforma interactiva es reunir la distribución geográfica, la trayectoria profesional y el testimonio directo de nuestros egresados a nivel nacional e internacional. A continuación, se detallan los componentes principales de este modelo:
     </p>
 
     <div class="intro-cards-grid">
@@ -36,23 +36,541 @@
           </p>
         </div>
       </div>
+
+      <div class="intro-card">
+        <div class="intro-card-icon">👩‍🎓</div>
+        <div class="intro-card-content">
+          <h3 class="intro-card-title">Idea 3: Datos representativos</h3>
+          <p class="intro-card-text">
+            Una sección que agrupe los principales datos de egresados de la universidad, como la empleabilidad ETC.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ================= BANNER PROMOCIONAL DE BENEFICIOS ================= -->
+  <!-- TÍTULO DE LA SECCIÓN INTERACTIVA -->
+  <h2 class="main-title">EGRESADOS POR EL MUNDO</h2>
+
+  <!-- CONTENEDOR FLIP GLOBAL -->
+  <div class="dashboard-flip-wrapper">
+    <div class="dashboard-inner" id="dashboardInner">
+      
+      <!-- ================= VISTA FRONTAL: MUNDIAL ================= -->
+      <div class="dashboard-face dashboard-front">
+        
+        <!-- TARJETA FRONTAL -->
+        <div class="card-left">
+          <button class="flip-btn" id="flipToColombiaBtn" title="Ver Departamentos de Colombia">
+            🔄 ver colombia 
+          </button>
+          
+          <div class="metrics">
+            <span class="total-sales">91</span>
+            <span class="badge">100% Total</span>
+          </div>
+          
+          <p class="subtitle">Países de nuestros egresados</p>
+
+          <ul class="country-list">
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot usa"></span>
+                <span>Estados Unidos <sub>US</sub></span>
+              </div>
+              <span class="sales-count">25</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot canada"></span>
+                <span>Canadá <sub>CA</sub></span>
+              </div>
+              <span class="sales-count">11</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot peru"></span>
+                <span>Perú <sub>PE</sub></span>
+              </div>
+              <span class="sales-count">10</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot alemania"></span>
+                <span>Alemania <sub>DE</sub></span>
+              </div>
+              <span class="sales-count">8</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot espana"></span>
+                <span>España <sub>ES</sub></span>
+              </div>
+              <span class="sales-count">8</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot australia"></span>
+                <span>Australia <sub>AU</sub></span>
+              </div>
+              <span class="sales-count">7</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot mexico"></span>
+                <span>México <sub>MX</sub></span>
+              </div>
+              <span class="sales-count">5</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot other"></span>
+                <span>Otros (11 países)</span>
+              </div>
+              <span class="sales-count">17</span>
+            </li>
+          </ul>
+
+          <div id="detailPanel" class="country-detail-panel">
+            <div class="detail-label">País Seleccionado</div>
+            <div id="detailCountryName" class="detail-country-name">-</div>
+            <div class="detail-label" style="margin-top: 8px;">Egresados Registrados</div>
+            <div id="detailStudentsCount" class="detail-students-count">0</div>
+          </div>
+        </div>
+
+        <!-- MAPA MUNDIAL DERECHA -->
+        <div class="map-right" id="mapRightWorld">
+          <div id="tooltipWorld" class="tooltip"></div>
+          <div class="ag-canvas" id="world-map-container"></div>
+        </div>
+
+      </div>
+
+      <!-- ================= VISTA TRASERA: COLOMBIA ================= -->
+      <div class="dashboard-face dashboard-back">
+        
+        <!-- TARJETA TRASERA -->
+        <div class="card-left">
+          <button class="flip-btn" id="flipToWorldBtn" title="Ver Países del Mundo">
+            🌐 Ver Mundial
+          </button>
+
+          <h2 class="card-title">Egresados</h2>
+          
+          <div class="metrics">
+            <span class="total-sales">775</span>
+            <span class="badge col-badge">100% Colombia</span>
+          </div>
+          
+          <p class="subtitle">Departamentos de Colombia</p>
+
+          <ul class="country-list">
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot bogota"></span>
+                <span>Bogotá D.C. <sub>DC</sub></span>
+              </div>
+              <span class="sales-count">645</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot cundinamarca"></span>
+                <span>Cundinamarca <sub>CUN</sub></span>
+              </div>
+              <span class="sales-count">59</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot antioquia"></span>
+                <span>Antioquia <sub>ANT</sub></span>
+              </div>
+              <span class="sales-count">15</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot meta"></span>
+                <span>Meta <sub>MET</sub></span>
+              </div>
+              <span class="sales-count">6</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot atlantico"></span>
+                <span>Atlántico <sub>ATL</sub></span>
+              </div>
+              <span class="sales-count">5</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot tolima"></span>
+                <span>Tolima <sub>TOL</sub></span>
+              </div>
+              <span class="sales-count">3</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot otros-dept"></span>
+                <span>Otros dptos</span>
+              </div>
+              <span class="sales-count">9</span>
+            </li>
+            <li class="country-item">
+              <div class="country-info">
+                <span class="dot no-especifica"></span>
+                <span>No especifica</span>
+              </div>
+              <span class="sales-count">33</span>
+            </li>
+          </ul>
+
+          <div id="detailPanelDept" class="country-detail-panel">
+            <div class="detail-label">Departamento</div>
+            <div id="detailDeptName" class="detail-country-name">-</div>
+            <div class="detail-label" style="margin-top: 8px;">Egresados Registrados</div>
+            <div id="detailDeptStudentsCount" class="detail-students-count">0</div>
+          </div>
+        </div>
+
+        <!-- MAPA COLOMBIA DERECHA -->
+        <div class="map-right" id="mapRightColombia">
+          <div id="tooltipColombia" class="tooltip"></div>
+          <div class="ag-canvas" id="colombia-map-container"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECCIÓN INFOGRAFÍA DE HITOS DE EGRESADOS -->
+  <h2 class="main-title">HITOS DE NUESTROS EGRESADOS</h2>
+  <section class="timeline-container">
+    <h2 class="timeline-title">Hitos Institucionales y de Graduados</h2>
+    <div class="history-timeline-wrapper">
+      <div class="history-timeline-track">
+
+        <!-- 2001 -->
+        <div class="history-step">
+          <div class="step-badge-year">2001</div>
+          <div class="history-card">
+            <div class="card-node-icon">🏛️</div>
+            <h3 class="card-year-title">23 de mayo de 2001</h3>
+            <h4 class="card-event-name">Nace Uniempresarial</h4>
+            <p class="card-event-desc">
+              Inicio de la Fundación Universitaria Empresarial de la Cámara de Comercio de Bogotá, con un modelo de formación orientado a la conexión entre universidad y empresa.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2004 -->
+        <div class="history-step">
+          <div class="step-badge-year">2004</div>
+          <div class="history-card">
+            <div class="card-node-icon">🎓</div>
+            <h3 class="card-year-title">Primera Promoción</h3>
+            <h4 class="card-event-name">Primeros Graduados</h4>
+            <p class="card-event-desc">
+              Uniempresarial entrega sus primeros profesionales al sector empresarial, dando inicio a una comunidad que continúa creciendo y dejando huella.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2008–2020 -->
+        <div class="history-step">
+          <div class="step-badge-year">2008–2020</div>
+          <div class="history-card">
+            <div class="card-node-icon">📈</div>
+            <h3 class="card-year-title">Consolidación</h3>
+            <h4 class="card-event-name">Crece nuestra comunidad</h4>
+            <p class="card-event-desc">
+              Se fortalece la presencia de nuestros graduados en diferentes sectores económicos y organizaciones, consolidando una comunidad con impacto empresarial y profesional.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2022–2024 -->
+        <div class="history-step">
+          <div class="step-badge-year">2022–2024</div>
+          <div class="history-card">
+            <div class="card-node-icon">💼</div>
+            <h3 class="card-year-title">Desarrollo Profesional</h3>
+            <h4 class="card-event-name">Fortalecimiento de empleabilidad</h4>
+            <p class="card-event-desc">
+              Se impulsan iniciativas orientadas al desarrollo profesional, la conexión con oportunidades laborales y el fortalecimiento de competencias para el mundo del trabajo.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2024: DAVID SAAVEDRA -->
+        <div class="history-step highlight-step">
+          <div class="step-badge-year year-highlight">2024</div>
+          <div class="history-card">
+            <div class="card-node-icon">🏛️</div>
+            <h3 class="card-year-title">Concejo de Bogotá (2024-2027)</h3>
+            <h4 class="card-event-name">David Saavedra</h4>
+            <p class="card-event-desc">
+              Administrador de Empresas. Llevó su formación empresarial al sector público asumiendo como Concejal de Bogotá, impulsando proyectos de participación, seguridad y seguridad alimentaria.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2025: EVOLUCIÓN -->
+        <div class="history-step">
+          <div class="step-badge-year">2025</div>
+          <div class="history-card">
+            <div class="card-node-icon">🚀</div>
+            <h3 class="card-year-title">Comunidad Activa</h3>
+            <h4 class="card-event-name">Evolucionamos contigo</h4>
+            <p class="card-event-desc">
+              Consolidación de estrategias para acompañar a los graduados a través de actualización de datos, carnetización, actividades institucionales y días internacionales.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2025: JUAN SEBASTIÁN ÁVILA -->
+        <div class="history-step highlight-step">
+          <div class="step-badge-year year-highlight">2025</div>
+          <div class="history-card">
+            <div class="card-node-icon">📊</div>
+            <h3 class="card-year-title">Liderazgo Empresarial</h3>
+            <h4 class="card-event-name">Juan Sebastián Ávila</h4>
+            <p class="card-event-desc">
+              Graduado de Administración de Empresas, se desempeña como Director Nacional de Operaciones de Miniso y comparte su experiencia profesional con las nuevas generaciones.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2026: ROMPELA -->
+        <div class="history-step highlight-step">
+          <div class="step-badge-year year-highlight">2026</div>
+          <div class="history-card">
+            <div class="card-node-icon">🔥</div>
+            <h3 class="card-year-title">Estrategia Institucional</h3>
+            <h4 class="card-event-name">ROMPELA - UNIEMPRESARIAL</h4>
+            <p class="card-event-desc">
+              Estrategia orientada a fortalecer el vínculo con canales como portal de graduados, carnet digital, actualización de base de datos, beneficios con aliados y networking.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2026: JUAN PABLO ROJAS LEÓN -->
+        <div class="history-step highlight-step">
+          <div class="step-badge-year year-gold">25 Años</div>
+          <div class="history-card">
+            <div class="card-node-icon">⭐</div>
+            <h3 class="card-year-title">Graduado Destacado</h3>
+            <h4 class="card-event-name">Juan Pablo Rojas León</h4>
+            <p class="card-event-desc">
+              Reconocimiento graduado destacado 25 años UNIEMPRESARIAL. Ingeniero de Sistemas especializado en IA y transformación digital en entornos internacionales.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE OPINIONES Y VIDEO TESTIMONIOS (CARRUSEL DINÁMICO) -->
+  <section class="testimonials-container">
+    <div class="testimonials-header">
+      <div>
+        <h2 class="testimonials-title">Opiniones de Nuestros Egresados</h2>
+        <p class="testimonials-subtitle">Conoce el impacto real de nuestra comunidad en el mundo</p>
+      </div>
+      <div class="carousel-controls">
+        <button class="control-btn" id="prevBtn" title="Anterior">←</button>
+        <button class="control-btn" id="nextBtn" title="Siguiente">→</button>
+      </div>
+    </div>
+
+    <div class="carousel-track-container">
+      <div class="carousel-track" id="carouselTrack">
+
+        <!-- TARJETA 1: TEXTO -->
+        <div class="testimonial-card">
+          <div class="card-type-badge badge-text">💬 Opinión</div>
+          <div class="quote-icon">“</div>
+          <div class="card-body">
+            <p class="testimonial-text">
+              “Es una alternativa buena de estudio, enfocada en lo que se requiere y con las practicas vitales para el desempeño de cualquier carrera ”
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar avatar-blue">CP</div>
+              <div class="author-info">
+                <h4 class="author-name">Paola chavez Espinel</h4>
+                <span class="author-role">Finanzas y Comercio Exterior · Bogotá DC</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TARJETA 2: TEXTO -->
+        <div class="testimonial-card">
+          <div class="card-type-badge badge-text">💬 Opinión</div>
+          <div class="quote-icon">“</div>
+          <div class="card-body">
+            <p class="testimonial-text">
+              Como emprendedor es importante la información que recibí y creo puede ser fundamental a futuros emprendedores con sus respectivas actualizaciones 
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar avatar-teal">AM</div>
+              <div class="author-info">
+                <h4 class="author-name">Wilson Cáceres H</h4>
+                <span class="author-role">Emprendedor · Bogotá D.C.</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TARJETA 3: TEXTO -->
+        <div class="testimonial-card">
+          <div class="card-type-badge badge-text">💬 Opinión</div>
+          <div class="quote-icon">“</div>
+          <div class="card-body">
+            <p class="testimonial-text">
+              “Uniempresarial tiene un plus y es su metodología de enseñanza y prácticas, creo que da un valor agregado a los egresados de la universidad a tener una visión real del ámbito corporativo ”
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar avatar-orange">DR</div>
+              <div class="author-info">
+                <h4 class="author-name">Iván Stiven Bonilla Ramirez</h4>
+                <span class="author-role">Finanzas y Comercio Exterior · Bogotá DC</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TARJETA 4: TEXTO -->
+        <div class="testimonial-card">
+          <div class="card-type-badge badge-text">💬 Opinión</div>
+          <div class="quote-icon">“</div>
+          <div class="card-body">
+            <p class="testimonial-text">
+             Es la única universidad que ofrece prácticas empresariales continuas y de valor. He estudiado en muchas universidades y ninguna ofrece este estilo de educación.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar avatar-purple">LG</div>
+              <div class="author-info">
+                <h4 class="author-name">Luz katerina gomez parra</h4>
+                <span class="author-role">Asistente administrativa · Australia</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="videosEgresados">
+      <div class="carousel-track-container">
+        <div class="carousel-track" id="carouselTrackVideos">
+
+          <div class="testimonial-card video-card" onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Juan Castellanos - Testimonio')">
+            <div class="card-type-badge badge-video">🎥 Video Testimonio</div>
+            <div class="video-thumbnail bg-2">
+              <div class="play-overlay">
+                <div class="play-icon">▶</div>
+              </div>
+              <span class="video-duration">02:10</span>
+            </div>
+            <div class="card-body">
+              <p class="testimonial-text">
+                “ PRÓXIMAMENTE ENCONTRARÁS LOS VIDEOS DE NUESTROS EGRESADOS, ¡GRACIAS POR SU PACIENCIA! ”
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar avatar-orange">DR</div>
+                <div class="author-info">
+                  <h4 class="author-name">Juan Castellanos</h4>
+                  <span class="author-role">Ingeniero de software · Bogotá DC</span>
+                  <div class="stars">★★★★★</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card video-card" onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Juan Castellanos - Testimonio')">
+            <div class="card-type-badge badge-video">🎥 Video Testimonio</div>
+            <div class="video-thumbnail bg-2">
+              <div class="play-overlay">
+                <div class="play-icon">▶</div>
+              </div>
+              <span class="video-duration">02:10</span>
+            </div>
+            <div class="card-body">
+              <p class="testimonial-text">
+                “ PRÓXIMAMENTE ENCONTRARÁS LOS VIDEOS DE NUESTROS EGRESADOS, ¡GRACIAS POR SU PACIENCIA! ”
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar avatar-orange">DR</div>
+                <div class="author-info">
+                  <h4 class="author-name">Juan Castellanos</h4>
+                  <span class="author-role">Ingeniero de software · Bogotá DC</span>
+                  <div class="stars">★★★★★</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card video-card" onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Juan Castellanos - Testimonio')">
+            <div class="card-type-badge badge-video">🎥 Video Testimonio</div>
+            <div class="video-thumbnail bg-2">
+              <div class="play-overlay">
+                <div class="play-icon">▶</div>
+              </div>
+              <span class="video-duration">02:10</span>
+            </div>
+            <div class="card-body">
+              <p class="testimonial-text">
+                “PRÓXIMAMENTE ENCONTRARÁS LOS VIDEOS DE NUESTROS EGRESADOS, ¡GRACIAS POR SU PACIENCIA! ”
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar avatar-orange">DR</div>
+                <div class="author-info">
+                  <h4 class="author-name">Juan Castellanos</h4>
+                  <span class="author-role">Ingeniero de software · Bogotá DC</span>
+                  <div class="stars">★★★★★</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL FLOTANTE PARA REPRODUCIR VIDEO -->
+  <div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeVideoModal(null)">&times;</span>
+      <h3 id="modalTitle" class="modal-video-title">Video Testimonio</h3>
+      <div class="iframe-container">
+        <iframe id="videoIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="main-title">NUESTRAS VENTAJAS</h2>
+
+  <!-- BANNER PROMOCIONAL DE BENEFICIOS -->
   <section class="banner-container">
     <div class="banner-card">
       <div class="banner-overlay"></div>
       <div class="banner-content">
-        <h2 class="banner-title">Club de Beneficios</h2>
-        <p class="banner-highlight">¡Tenemos muchas alianzas para ti!</p>
-        <a href="#" class="banner-btn">
+        <h2 class="banner-title">Lo que nos destaca</h2>
+        <p class="banner-highlight">¡Tenemos lo mejor!</p>
+        <a href="#datos" class="banner-btn">
           <span>Conocer más</span>
-          <span class="btn-icon">→</span>
+          <span class="btn-icon">v</span>
         </a>
       </div>
       <div class="banner-image-wrapper">
-        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop" alt="Estudiantes disfrutando de beneficios" class="banner-img">
+        <img src="https://uniempresarial.edu.co/wp-content/uploads/2024/06/generative-ai-graduation-ceremony-scaled_11zon-1024x574.jpg" alt="Estudiantes disfrutando de beneficios" class="banner-img">
       </div>
       <div class="banner-dots">
         <span class="dot-item"></span>
@@ -62,13 +580,13 @@
     </div>
   </section>
 
-  <!-- ================= SECCIÓN DE DATOS DE EMPLEABILIDAD (4 TARJETAS ANIMADAS) ================= -->
-  <section class="stats-cards-container">
+  <!-- SECCIÓN DE MÉTRICAS Y DATOS DE EMPLEABILIDAD (4 TARJETAS CON ANIMACIÓN) -->
+  <section class="stats-cards-container" id="datos">
     <div class="stats-cards-grid">
 
       <!-- TARJETA 1 -->
       <div class="stat-card">
-        <div class="stat-card-icon">💼</div>
+        <div class="stat-card-icon">💬</div>
         <div class="stat-number-wrapper">
           <span class="counter-number" data-target="88">0</span><span class="counter-unit">%</span>
         </div>
@@ -81,7 +599,7 @@
 
       <!-- TARJETA 2 -->
       <div class="stat-card">
-        <div class="stat-card-icon">🇨🇴</div>
+        <div class="stat-card-icon">📢</div>
         <div class="stat-number-wrapper">
           <span class="counter-number" data-target="775">0</span><span class="counter-unit">+</span>
         </div>
@@ -94,14 +612,14 @@
 
       <!-- TARJETA 3 -->
       <div class="stat-card">
-        <div class="stat-card-icon">🌐</div>
+        <div class="stat-card-icon">💼</div>
         <div class="stat-number-wrapper">
           <span class="counter-number" data-target="91">0</span><span class="counter-unit">+</span>
         </div>
         <h3 class="stat-author-name">Presencia Internacional</h3>
         <span class="stat-location">17 Países</span>
         <p class="stat-description">
-          Graduados ejerciendo su profesión y liderando proyectos en América, Europa, Asia y Oceanía.
+          Graduados ejerciendo su profesión y liderando proyectos en América, Europa y Oceanía.
         </p>
       </div>
 
@@ -121,384 +639,11 @@
     </div>
   </section>
 
-  <!-- TÍTULO DE LA SECCIÓN INTERACTIVA -->
-  <h2 class="main-title">Idea número 1: Cartografía Interactiva</h2>
-
-  <!-- ================= CONTENEDOR FLIP GLOBAL (MAPAS) ================= -->
-  <div class="dashboard-flip-wrapper">
-    <div class="dashboard-inner" id="dashboardInner">
-      
-      <!-- VISTA FRONTAL: MUNDIAL -->
-      <div class="dashboard-face dashboard-front">
-        <div class="card-left">
-          <button class="flip-btn" id="flipToColombiaBtn" title="Ver Departamentos de Colombia">
-            🔄 Colombia
-          </button>
-
-          <h2 class="card-title">Egresados</h2>
-          
-          <div class="metrics">
-            <span class="total-sales">91</span>
-            <span class="badge">100% Total</span>
-          </div>
-          
-          <p class="subtitle">Países de nuestros egresados</p>
-
-          <ul class="country-list">
-            <li class="country-item">
-              <div class="country-info"><span class="dot usa"></span><span>Estados Unidos <sub>US</sub></span></div>
-              <span class="sales-count">25</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot canada"></span><span>Canadá <sub>CA</sub></span></div>
-              <span class="sales-count">11</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot peru"></span><span>Perú <sub>PE</sub></span></div>
-              <span class="sales-count">10</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot alemania"></span><span>Alemania <sub>DE</sub></span></div>
-              <span class="sales-count">8</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot espana"></span><span>España <sub>ES</sub></span></div>
-              <span class="sales-count">8</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot australia"></span><span>Australia <sub>AU</sub></span></div>
-              <span class="sales-count">7</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot mexico"></span><span>México <sub>MX</sub></span></div>
-              <span class="sales-count">5</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot other"></span><span>Otros (11 países)</span></div>
-              <span class="sales-count">17</span>
-            </li>
-          </ul>
-
-          <div id="detailPanel" class="country-detail-panel">
-            <div class="detail-label">País Seleccionado</div>
-            <div id="detailCountryName" class="detail-country-name">-</div>
-            <div class="detail-label" style="margin-top: 8px;">Egresados Registrados</div>
-            <div id="detailStudentsCount" class="detail-students-count">0</div>
-          </div>
-        </div>
-
-        <div class="map-right" id="mapRightWorld">
-          <div id="tooltipWorld" class="tooltip"></div>
-          <div class="ag-canvas" id="world-map-container"></div>
-        </div>
-      </div>
-
-      <!-- VISTA TRASERA: COLOMBIA -->
-      <div class="dashboard-face dashboard-back">
-        <div class="card-left">
-          <button class="flip-btn" id="flipToWorldBtn" title="Ver Países del Mundo">
-            🌐 Mundial
-          </button>
-
-          <h2 class="card-title">Egresados</h2>
-          
-          <div class="metrics">
-            <span class="total-sales">775</span>
-            <span class="badge col-badge">100% Colombia</span>
-          </div>
-          
-          <p class="subtitle">Departamentos de Colombia</p>
-
-          <ul class="country-list">
-            <li class="country-item">
-              <div class="country-info"><span class="dot bogota"></span><span>Bogotá D.C. <sub>DC</sub></span></div>
-              <span class="sales-count">645</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot cundinamarca"></span><span>Cundinamarca <sub>CUN</sub></span></div>
-              <span class="sales-count">59</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot antioquia"></span><span>Antioquia <sub>ANT</sub></span></div>
-              <span class="sales-count">15</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot meta"></span><span>Meta <sub>MET</sub></span></div>
-              <span class="sales-count">6</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot atlantico"></span><span>Atlántico <sub>ATL</sub></span></div>
-              <span class="sales-count">5</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot tolima"></span><span>Tolima <sub>TOL</sub></span></div>
-              <span class="sales-count">3</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot otros-dept"></span><span>Otros dptos</span></div>
-              <span class="sales-count">9</span>
-            </li>
-            <li class="country-item">
-              <div class="country-info"><span class="dot no-especifica"></span><span>No especifica</span></div>
-              <span class="sales-count">33</span>
-            </li>
-          </ul>
-
-          <div id="detailPanelDept" class="country-detail-panel">
-            <div class="detail-label">Departamento</div>
-            <div id="detailDeptName" class="detail-country-name">-</div>
-            <div class="detail-label" style="margin-top: 8px;">Egresados Registrados</div>
-            <div id="detailDeptStudentsCount" class="detail-students-count">0</div>
-          </div>
-        </div>
-
-        <div class="map-right" id="mapRightColombia">
-          <div id="tooltipColombia" class="tooltip"></div>
-          <div class="ag-canvas" id="colombia-map-container"></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ================= SECCIÓN INFOGRAFÍA DE HITOS HISTÓRICOS (2001 - 2026) ================= -->
-  <section class="timeline-container">
-    <div class="timeline-header">
-      <span class="timeline-badge">Nuestra Trayectoria</span>
-      <h2 class="timeline-title">Hitos Institucionales y de Nuestros Graduados</h2>
-      <p class="timeline-subtitle">25 años transformando la conexión entre la educación superior y el sector empresarial</p>
-    </div>
-
-    <div class="history-timeline-wrapper">
-      <div class="history-timeline-track">
-
-        <!-- 2001 -->
-        <div class="history-step">
-          <div class="step-badge-year">2001</div>
-          <div class="history-card">
-            <div class="card-node-icon">🏛️</div>
-            <h3 class="card-year-title">23 de mayo de 2001</h3>
-            <h4 class="card-event-name">Nace Uniempresarial</h4>
-            <p class="card-event-desc">
-              Inicio de la Fundación Universitaria Empresarial de la Cámara de Comercio de Bogotá, pionera en el modelo de formación dual enfocado en conectar la universidad con la empresa.
-            </p>
-          </div>
-        </div>
-
-        <!-- 2004 -->
-        <div class="history-step">
-          <div class="step-badge-year">2004</div>
-          <div class="history-card">
-            <div class="card-node-icon">🎓</div>
-            <h3 class="card-year-title">Primera Promoción</h3>
-            <h4 class="card-event-name">Primeros Graduados</h4>
-            <p class="card-event-desc">
-              Uniempresarial entrega sus primeros profesionales al sector empresarial, dando inicio a una comunidad que continúa creciendo e impactando el mercado laboral.
-            </p>
-          </div>
-        </div>
-
-        <!-- 2008–2020 -->
-        <div class="history-step">
-          <div class="step-badge-year">2008–2020</div>
-          <div class="history-card">
-            <div class="card-node-icon">📈</div>
-            <h3 class="card-year-title">Consolidación</h3>
-            <h4 class="card-event-name">Crecimiento de la Comunidad</h4>
-            <p class="card-event-desc">
-              Se fortalece la presencia de los graduados en diversos sectores económicos y organizaciones clave, consolidando una red con alto impacto empresarial y profesional.
-            </p>
-          </div>
-        </div>
-
-        <!-- 2022–2024 -->
-        <div class="history-step">
-          <div class="step-badge-year">2022–2024</div>
-          <div class="history-card">
-            <div class="card-node-icon">💼</div>
-            <h3 class="card-year-title">Inserción Laboral</h3>
-            <h4 class="card-event-name">Fortalecimiento de la Empleabilidad</h4>
-            <p class="card-event-desc">
-              Se impulsan iniciativas orientadas al desarrollo profesional, conexión directa con oportunidades laborales y desarrollo de competencias estratégicas para el trabajo.
-            </p>
-          </div>
-        </div>
-
-        <!-- 2024 - DAVID SAAVEDRA -->
-        <div class="history-step highlight-step">
-          <div class="step-badge-year year-highlight">2024</div>
-          <div class="history-card">
-            <div class="card-node-icon">🏛️</div>
-            <h3 class="card-year-title">Gestión Pública (2024-2027)</h3>
-            <h4 class="card-event-name">Al Concejo de Bogotá</h4>
-            <p class="card-event-desc">
-              <strong>David Saavedra</strong> (Administrador de Empresas) asumió como Concejal de Bogotá, liderando iniciativas de participación ciudadana, seguridad y seguridad alimentaria.
-            </p>
-          </div>
-        </div>
-
-        <!-- 2025 - EVOLUCIÓN & LIDERAZGO -->
-        <div class="history-step">
-          <div class="step-badge-year">2025</div>
-          <div class="history-card">
-            <div class="card-node-icon">🚀</div>
-            <h3 class="card-year-title">Liderazgo y Acompañamiento</h3>
-            <h4 class="card-event-name">Evolución y Dirección en Miniso</h4>
-            <p class="card-event-desc">
-              <strong>Juan Sebastián Ávila</strong> (Administración) asume como Director Nacional de Operaciones de Miniso. A la par, se consolidan estrategias de carnetización y actualización de datos.
-            </p>
-          </div>
-        </div>
-
-        <!-- 2026 - ESTRATEGIA ROMPELA -->
-        <div class="history-step highlight-step">
-          <div class="step-badge-year year-highlight">2026</div>
-          <div class="history-card">
-            <div class="card-node-icon">🔥</div>
-            <h3 class="card-year-title">Red de Graduados</h3>
-            <h4 class="card-event-name">Estrategia ROMPELA-UNIEMPRESARIAL</h4>
-            <p class="card-event-desc">
-              Lanzamiento del portal de graduados, carnet digital, alianzas con beneficios estratégicos y espacios de networking para reactivar y conectar a la comunidad.
-            </p>
-          </div>
-        </div>
-
-        <!-- 2026 - RECONOCIMIENTO JUAN PABLO ROJAS -->
-        <div class="history-step highlight-step">
-          <div class="step-badge-year year-gold">25 Años</div>
-          <div class="history-card">
-            <div class="card-node-icon">⭐</div>
-            <h3 class="card-year-title">Egresado Destacado</h3>
-            <h4 class="card-event-name">Juan Pablo Rojas León</h4>
-            <p class="card-event-desc">
-              Reconocimiento especial de 25 años. Ingeniero de Sistemas especializado en IA y transformación digital con trayectoria en ecosistemas tecnológicos internacionales.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SECCIÓN DE TESTIMONIOS (CARRUSEL) ================= -->
-  <section class="testimonials-container">
-    <div class="testimonials-header">
-      <div>
-        <h2 class="testimonials-title">Opiniones de Nuestros Egresados</h2>
-        <p class="testimonials-subtitle">Conoce el impacto real de nuestra comunidad en el mundo</p>
-      </div>
-      <div class="carousel-controls">
-        <button class="control-btn" id="prevBtn" title="Anterior">←</button>
-        <button class="control-btn" id="nextBtn" title="Siguiente">→</button>
-      </div>
-    </div>
-
-    <div class="carousel-track-container">
-      <div class="carousel-track" id="carouselTrack">
-
-        <!-- TARJETA 1: VIDEO -->
-        <div class="testimonial-card video-card" onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Carlos Pérez - Testimonio')">
-          <div class="card-type-badge badge-video">🎥 Video Testimonio</div>
-          <div class="video-thumbnail bg-1">
-            <div class="play-overlay"><div class="play-icon">▶</div></div>
-            <span class="video-duration">01:45</span>
-          </div>
-          <div class="card-body">
-            <p class="testimonial-text">
-              “La formación práctica me dio las herramientas clave para liderar equipos de ingeniería en el mercado norteamericano.”
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar avatar-blue">CP</div>
-              <div class="author-info">
-                <h4 class="author-name">Carlos Pérez</h4>
-                <span class="author-role">Ingeniero de Software · EE. UU.</span>
-                <div class="stars">★★★★★</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TARJETA 2: TEXTO -->
-        <div class="testimonial-card">
-          <div class="card-type-badge badge-text">💬 Opinión</div>
-          <div class="quote-icon">“</div>
-          <div class="card-body">
-            <p class="testimonial-text">
-              Gracias a los convenios institucionales y las redes de apoyo, fundé mi empresa en Bogotá con proyección nacional.
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar avatar-teal">AM</div>
-              <div class="author-info">
-                <h4 class="author-name">Ana María Morales</h4>
-                <span class="author-role">Fundadora & CEO · Bogotá D.C.</span>
-                <div class="stars">★★★★★</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TARJETA 3: VIDEO -->
-        <div class="testimonial-card video-card" onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'David Rodríguez - Testimonio')">
-          <div class="card-type-badge badge-video">🎥 Video Testimonio</div>
-          <div class="video-thumbnail bg-2">
-            <div class="play-overlay"><div class="play-icon">▶</div></div>
-            <span class="video-duration">02:10</span>
-          </div>
-          <div class="card-body">
-            <p class="testimonial-text">
-              “La experiencia internacional de la universidad me abrió las puertas para realizar estudios de maestría en Europa.”
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar avatar-orange">DR</div>
-              <div class="author-info">
-                <h4 class="author-name">David Rodríguez</h4>
-                <span class="author-role">Especialista en Datos · España</span>
-                <div class="stars">★★★★★</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TARJETA 4: TEXTO -->
-        <div class="testimonial-card">
-          <div class="card-type-badge badge-text">💬 Opinión</div>
-          <div class="quote-icon">“</div>
-          <div class="card-body">
-            <p class="testimonial-text">
-              La calidad docente y el enfoque gerencial me permitieron ascender a cargos directivos en tiempo récord.
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar avatar-purple">LG</div>
-              <div class="author-info">
-                <h4 class="author-name">Luisa Gómez</h4>
-                <span class="author-role">Directora de Operaciones · Canadá</span>
-                <div class="stars">★★★★★</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- MODAL FLOTANTE PARA REPRODUCIR VIDEO -->
-  <div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeVideoModal(null)">&times;</span>
-      <h3 id="modalTitle" class="modal-video-title">Video Testimonio</h3>
-      <div class="iframe-container">
-        <iframe id="videoIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCRIPTS DE INTERACCIÓN, ANIMACIÓN Y MAPAS (D3 & TOPOJSON) -->
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <!-- SCRIPT PARA ANIMACIÓN DE CONTEO PROGRESIVO -->
   <script>
-    // 1. ANIMACIÓN DE CONTEO PROGRESIVO EN TARJETAS
     document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll('.counter-number');
+
       const animateCounter = (counter) => {
         const target = +counter.getAttribute('data-target');
         const duration = 1800;
@@ -520,7 +665,7 @@
         }, frameDuration);
       };
 
-      const observer = new IntersectionObserver((entries) => {
+      const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const counter = entry.target.querySelector('.counter-number');
@@ -532,10 +677,17 @@
         });
       }, { threshold: 0.3 });
 
-      document.querySelectorAll('.stat-card').forEach(card => observer.observe(card));
+      document.querySelectorAll('.stat-card').forEach(card => {
+        observer.observe(card);
+      });
     });
+  </script>
 
-    // 2. CONTROL DEL FLIP DEL DASHBOARD
+  <!-- SCRIPTS D3 & TOPOJSON -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script>
+    // CONTROL DEL FLIP DEL DASHBOARD
     const dashboardInner = document.getElementById('dashboardInner');
     document.getElementById('flipToColombiaBtn').addEventListener('click', () => {
       dashboardInner.classList.add('flipped');
@@ -544,7 +696,7 @@
       dashboardInner.classList.remove('flipped');
     });
 
-    // 3. MAPA DE PAÍSES INTERNACIONALES
+    // 1. DATOS DE PAÍSES INTERNACIONALES
     const worldStudentData = {
       "US": { name: "Estados Unidos", students: 25 },
       "CA": { name: "Canadá", students: 11 },
@@ -616,7 +768,7 @@
           });
       });
 
-    // 4. MAPA DE COLOMBIA CON PUNTOS SEGÚN DATOS REALES
+    // 2. MAPA DE COLOMBIA CON PUNTOS SEGÚN DATOS REALES
     fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json')
       .then(res => res.json())
       .then(world10m => {
@@ -686,7 +838,7 @@
           });
       });
 
-    // 5. CARRUSEL Y MODAL DE TESTIMONIOS
+    // 3. CARRUSEL Y MODAL DE TESTIMONIOS
     const track = document.getElementById('carouselTrack');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
