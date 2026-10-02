@@ -22,11 +22,7 @@ body {
   margin: 0;
 }
 
-/* =========================================================
-   SECCIÓN DE INTRODUCCIÓN Y EXPLICACIÓN
-   ========================================================= */
-
-.intro-container {
+.contenedor-introduccion {
   max-width: 1250px;
   margin: 0 auto 40px auto;
   background: #ffffff;
@@ -36,7 +32,7 @@ body {
   border-left: 6px solid #0e1f87;
 }
 
-.intro-badge {
+.etiqueta-introduccion {
   display: inline-block;
   background-color: #e0e7ff;
   color: #0e1f87;
@@ -49,7 +45,7 @@ body {
   margin-bottom: 12px;
 }
 
-.intro-title {
+.titulo-introduccion {
   font-size: 26px;
   font-weight: 800;
   color: #0e1f87;
@@ -57,7 +53,7 @@ body {
   letter-spacing: -0.3px;
 }
 
-.intro-description {
+.descripcion-introduccion {
   font-size: 14px;
   line-height: 1.6;
   color: #475569;
@@ -66,13 +62,13 @@ body {
   font-weight: 500;
 }
 
-.intro-cards-grid {
+.cuadricula-introduccion {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.intro-card {
+.tarjeta-introduccion {
   background-color: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
@@ -83,13 +79,13 @@ body {
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-.intro-card:hover {
+.tarjeta-introduccion:hover {
   transform: translateY(-3px);
   border-color: #cbd5e1;
   background-color: #ffffff;
 }
 
-.intro-card-icon {
+.icono-tarjeta-introduccion {
   font-size: 28px;
   background: #ffffff;
   width: 48px;
@@ -102,19 +98,19 @@ body {
   flex-shrink: 0;
 }
 
-.intro-card-content {
+.contenido-tarjeta-introduccion {
   display: flex;
   flex-direction: column;
 }
 
-.intro-card-title {
+.titulo-tarjeta-introduccion {
   font-size: 15px;
   font-weight: 700;
   color: #1e293b;
   margin: 0 0 4px 0;
 }
 
-.intro-card-text {
+.texto-tarjeta-introduccion {
   font-size: 12px;
   color: #64748b;
   line-height: 1.5;
@@ -122,8 +118,7 @@ body {
   font-weight: 500;
 }
 
-/* TÍTULO DEL DASHBOARD */
-.main-title {
+.titulo-principal {
   max-width: 1250px;
   margin: 20px auto 24px auto;
   font-size: 28px;
@@ -133,17 +128,13 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* =========================================================
-   ESTRUCTURA Y GIRADO 3D (FLIP)
-   ========================================================= */
-
-.dashboard-flip-wrapper {
+.envoltorio-giro-panel {
   max-width: 1250px;
   margin: 0 auto;
   perspective: 1200px;
 }
 
-.dashboard-inner {
+.interior-panel {
   position: relative;
   width: 100%;
   min-height: 530px;
@@ -151,11 +142,11 @@ body {
   transform-style: preserve-3d;
 }
 
-.dashboard-inner.flipped {
+.interior-panel.girado {
   transform: rotateY(180deg);
 }
 
-.dashboard-face {
+.cara-panel {
   position: absolute;
   top: 0;
   left: 0;
@@ -167,12 +158,11 @@ body {
   align-items: stretch;
 }
 
-.dashboard-back {
+.cara-trasera {
   transform: rotateY(180deg);
 }
 
-/* TARJETA IZQUIERDA */
-.card-left {
+.tarjeta-izquierda {
   background-color: #ffffff;
   border-radius: 16px;
   padding: 24px;
@@ -185,7 +175,7 @@ body {
   flex-direction: column;
 }
 
-.flip-btn {
+.boton-girar {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -201,14 +191,14 @@ body {
   z-index: 10;
 }
 
-.flip-btn:hover {
+.boton-girar:hover {
   background-color: #0e1f87;
   color: #ffffff;
   border-color: #0e1f87;
   transform: scale(1.05);
 }
 
-.card-title {
+.titulo-tarjeta {
   font-size: 18px;
   font-weight: 700;
   color: #3b4759;
@@ -216,20 +206,20 @@ body {
   padding-right: 80px;
 }
 
-.metrics {
+.metricas {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 4px;
 }
 
-.total-sales {
+.total-egresados {
   font-size: 32px;
   font-weight: 800;
   color: #2d3748;
 }
 
-.badge {
+.insignia {
   background-color: #07eee2;
   color: #0e1f87;
   font-size: 12px;
@@ -238,18 +228,18 @@ body {
   border-radius: 12px;
 }
 
-.badge.col-badge {
+.insignia.insignia-colombia {
   background-color: #fde047;
   color: #854d0e;
 }
 
-.subtitle {
+.subtitulo {
   font-size: 14px;
   color: #8c98a9;
   margin-bottom: 20px;
 }
 
-.country-list {
+.lista-paises {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -260,14 +250,14 @@ body {
   overflow-y: auto;
 }
 
-.country-item {
+.item-pais {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 13px;
 }
 
-.country-info {
+.informacion-pais {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -275,68 +265,68 @@ body {
   font-weight: 500;
 }
 
-.dot {
+.punto {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   display: inline-block;
 }
 
-.dot.usa { background-color: #3b82f6; }
-.dot.canada { background-color: #ef4444; }
-.dot.peru { background-color: #22c55e; }
-.dot.alemania { background-color: #eab308; }
-.dot.espana { background-color: #f97316; }
-.dot.australia { background-color: #a855f7; }
-.dot.mexico { background-color: #06b6d4; }
-.dot.other { background-color: #94a3b8; }
+.punto.estados-unidos { background-color: #3b82f6; }
+.punto.canada { background-color: #ef4444; }
+.punto.peru { background-color: #22c55e; }
+.punto.alemania { background-color: #eab308; }
+.punto.espana { background-color: #f97316; }
+.punto.australia { background-color: #a855f7; }
+.punto.mexico { background-color: #06b6d4; }
+.punto.otros { background-color: #94a3b8; }
 
-.dot.bogota { background-color: #0e1f87; }
-.dot.cundinamarca { background-color: #ea580c; }
-.dot.antioquia { background-color: #16a34a; }
-.dot.meta { background-color: #a855f7; }
-.dot.atlantico { background-color: #06b6d4; }
-.dot.tolima { background-color: #eab308; }
-.dot.otros-dept { background-color: #64748b; }
-.dot.no-especifica { background-color: #cbd5e1; }
+.punto.bogota { background-color: #0e1f87; }
+.punto.cundinamarca { background-color: #ea580c; }
+.punto.antioquia { background-color: #16a34a; }
+.punto.meta { background-color: #a855f7; }
+.punto.atlantico { background-color: #06b6d4; }
+.punto.tolima { background-color: #eab308; }
+.punto.otros-departamentos { background-color: #64748b; }
+.punto.no-especifica { background-color: #cbd5e1; }
 
-.sales-count {
+.conteo-egresados {
   font-weight: 600;
   color: #4a5568;
 }
 
-.country-detail-panel {
+.panel-detalle-pais {
   margin-top: 12px;
   padding-top: 10px;
   border-top: 1px solid #e2e8f0;
   display: none;
-  animation: fadeIn 0.3s ease;
+  animation: aparecerSuave 0.3s ease;
 }
 
-@keyframes fadeIn {
+@keyframes aparecerSuave {
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.detail-country-name {
+.nombre-detalle {
   font-size: 15px;
   font-weight: 700;
   color: #2d3748;
 }
 
-.detail-students-count {
+.numero-detalle {
   font-size: 22px;
   font-weight: 800;
   color: #3182ce;
 }
 
-.detail-label {
+.etiqueta-detalle {
   font-size: 11px;
   color: #718096;
   text-transform: uppercase;
 }
 
-.map-right {
+.mapa-derecha {
   flex: 1;
   background-color: #ffffff;
   border-radius: 16px;
@@ -348,26 +338,26 @@ body {
   position: relative;
 }
 
-.ag-canvas {
+.lienzo-mapa {
   width: 100%;
   height: 100%;
 }
 
-.ag-canvas_svg {
+.lienzo-mapa svg {
   width: 100%;
   height: auto;
   max-height: 480px;
   display: block;
 }
 
-.ag-canvas_svg path {
+.lienzo-mapa svg path {
   fill: #cbd5e1;
   stroke: #ffffff;
   stroke-width: 0.6;
   transition: fill 0.3s ease;
 }
 
-.ag-canvas_svg path:hover {
+.lienzo-mapa svg path:hover {
   fill: #94a3b8;
   cursor: pointer;
 }
@@ -380,7 +370,7 @@ body {
 #AU { fill: #a855f7 !important; cursor: pointer; }
 #MX { fill: #06b6d4 !important; cursor: pointer; }
 
-.tooltip {
+.cuadro-flotante {
   position: absolute;
   background: rgba(15, 23, 42, 0.9);
   color: #ffffff;
@@ -393,11 +383,7 @@ body {
   z-index: 100;
 }
 
-/* =========================================================
-   SECCIÓN INFOGRAFÍA DE HITOS (TIMELINE CRONOLÓGICO DE 5 HITOS)
-   ========================================================= */
-
-.timeline-container {
+.contenedor-linea-tiempo {
   max-width: 1250px;
   margin: 40px auto 0 auto;
   background: #ffffff;
@@ -406,7 +392,7 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.timeline-title {
+.titulo-linea-tiempo {
   font-size: 22px;
   font-weight: 800;
   color: #0e1f87;
@@ -414,14 +400,14 @@ body {
   text-align: center;
 }
 
-.history-timeline-wrapper {
+.envoltorio-linea-tiempo {
   overflow-x: auto;
   padding: 10px 4px 20px 4px;
   scrollbar-width: thin;
   scrollbar-color: #cbd5e1 #f1f5f9;
 }
 
-.history-timeline-track {
+.pista-linea-tiempo {
   display: flex;
   gap: 20px;
   position: relative;
@@ -429,7 +415,7 @@ body {
   padding-top: 10px;
 }
 
-.history-timeline-track::before {
+.pista-linea-tiempo::before {
   content: '';
   position: absolute;
   top: 36px;
@@ -441,7 +427,7 @@ body {
   border-radius: 2px;
 }
 
-.history-step {
+.paso-hito {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -451,11 +437,11 @@ body {
   transition: transform 0.3s ease;
 }
 
-.history-step:hover {
+.paso-hito:hover {
   transform: translateY(-6px);
 }
 
-.step-badge-year {
+.etiqueta-año {
   background-color: #0e1f87;
   color: #ffffff;
   font-size: 13px;
@@ -468,18 +454,18 @@ body {
   transition: all 0.3s ease;
 }
 
-.year-highlight {
+.año-destacado {
   background-color: #ea580c;
   box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
 }
 
-.year-gold {
+.año-dorado {
   background-color: #eab308;
   color: #0f172a;
   box-shadow: 0 4px 12px rgba(234, 179, 8, 0.4);
 }
 
-.history-card {
+.tarjeta-hito {
   background-color: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 14px;
@@ -492,22 +478,18 @@ body {
   transition: all 0.3s ease;
 }
 
-.history-step:hover .history-card {
+.paso-hito:hover .tarjeta-hito {
   background-color: #ffffff;
   border-color: #cbd5e1;
   box-shadow: 0 10px 24px rgba(14, 31, 135, 0.12);
 }
 
-.card-node-icon { font-size: 24px; margin-bottom: 2px; }
-.card-year-title { font-size: 11px; font-weight: 800; color: #64748b; text-transform: uppercase; margin: 0; }
-.card-event-name { font-size: 15px; font-weight: 800; color: #0e1f87; margin: 0; }
-.card-event-desc { font-size: 12px; color: #475569; line-height: 1.5; margin: 4px 0 0 0; font-weight: 500; }
+.icono-hito { font-size: 24px; margin-bottom: 2px; }
+.subtitulo-hito { font-size: 11px; font-weight: 800; color: #64748b; text-transform: uppercase; margin: 0; }
+.nombre-evento-hito { font-size: 15px; font-weight: 800; color: #0e1f87; margin: 0; }
+.descripcion-hito { font-size: 12px; color: #475569; line-height: 1.5; margin: 4px 0 0 0; font-weight: 500; }
 
-/* =========================================================
-   SECCIÓN DE TESTIMONIOS DINÁMICOS
-   ========================================================= */
-
-.testimonials-container {
+.contenedor-testimonios {
   max-width: 1250px;
   margin: 40px auto 0 auto;
   background: #ffffff;
@@ -516,19 +498,19 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.testimonials-header {
+.cabecera-testimonios {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 28px;
 }
 
-.testimonials-title { font-size: 24px; font-weight: 800; color: #0e1f87; margin: 0 0 6px 0; }
-.testimonials-subtitle { font-size: 13px; color: #64748b; margin: 0; font-weight: 500; }
+.titulo-testimonios { font-size: 24px; font-weight: 800; color: #0e1f87; margin: 0 0 6px 0; }
+.subtitulo-testimonios { font-size: 13px; color: #64748b; margin: 0; font-weight: 500; }
 
-.carousel-controls { display: flex; gap: 10px; }
+.controles-carrusel { display: flex; gap: 10px; }
 
-.control-btn {
+.boton-control {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -543,9 +525,9 @@ body {
   justify-content: center;
 }
 
-.carousel-track-container { overflow: hidden; width: 100%; }
+.contenedor-pista-carrusel { overflow: hidden; width: 100%; }
 
-.carousel-track {
+.pista-carrusel {
   display: flex;
   gap: 20px;
   overflow-x: auto;
@@ -554,7 +536,7 @@ body {
   scrollbar-width: none;
 }
 
-.testimonial-card {
+.tarjeta-testimonio {
   min-width: 340px;
   max-width: 340px;
   background-color: #f8fafc;
@@ -567,7 +549,7 @@ body {
   flex-shrink: 0;
 }
 
-.card-type-badge {
+.insignia-tipo-tarjeta {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -578,25 +560,25 @@ body {
   text-transform: uppercase;
 }
 
-.badge-video { background-color: rgba(14, 31, 135, 0.9); color: #ffffff; }
-.badge-text { background-color: #e2e8f0; color: #334155; }
+.insignia-video { background-color: rgba(14, 31, 135, 0.9); color: #ffffff; }
+.insignia-texto { background-color: #e2e8f0; color: #334155; }
 
-.card-body { padding: 20px; display: flex; flex-direction: column; justify-content: space-between; flex: 1; }
-.quote-icon { font-size: 44px; color: #cbd5e1; position: absolute; top: 10px; left: 16px; }
-.testimonial-text { font-size: 13px; line-height: 1.6; color: #334155; font-style: italic; margin: 12px 0 20px 0; font-weight: 500; }
-.testimonial-author { display: flex; align-items: center; gap: 12px; border-top: 1px dashed #e2e8f0; padding-top: 14px; }
+.cuerpo-tarjeta { padding: 20px; display: flex; flex-direction: column; justify-content: space-between; flex: 1; }
+.icono-comillas { font-size: 44px; color: #cbd5e1; position: absolute; top: 10px; left: 16px; }
+.texto-testimonio { font-size: 13px; line-height: 1.6; color: #334155; font-style: italic; margin: 12px 0 20px 0; font-weight: 500; }
+.autor-testimonio { display: flex; align-items: center; gap: 12px; border-top: 1px dashed #e2e8f0; padding-top: 14px; }
 
-.author-avatar { width: 40px; height: 40px; border-radius: 50%; color: #ffffff; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
-.avatar-blue { background-color: #0e1f87; }
-.avatar-teal { background-color: #0d9488; }
-.avatar-orange { background-color: #ea580c; }
-.avatar-purple { background-color: #7c3aed; }
+.avatar-autor { width: 40px; height: 40px; border-radius: 50%; color: #ffffff; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+.avatar-azul { background-color: #0e1f87; }
+.avatar-verde { background-color: #0d9488; }
+.avatar-naranja { background-color: #ea580c; }
+.avatar-morado { background-color: #7c3aed; }
 
-.author-name { font-size: 13px; font-weight: 700; color: #1e293b; margin: 0; }
-.author-role { font-size: 11px; color: #64748b; margin: 2px 0 4px 0; font-weight: 500; }
-.stars { color: #f59e0b; font-size: 11px; letter-spacing: 2px; }
+.nombre-autor { font-size: 13px; font-weight: 700; color: #1e293b; margin: 0; }
+.cargo-autor { font-size: 11px; color: #64748b; margin: 2px 0 4px 0; font-weight: 500; }
+.estrellas { color: #f59e0b; font-size: 11px; letter-spacing: 2px; }
 
-.videosEgresados {
+.seccion-videos-egresados {
   max-width: 1250px;
   margin: 40px auto 0 auto;
   background: #ffffff;
@@ -605,11 +587,7 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
 }
 
-/* =========================================================
-   VENTANA MODAL FLOTANTE DE VIDEO
-   ========================================================= */
-
-.video-modal {
+.modal-video {
   display: none;
   position: fixed;
   top: 0;
@@ -623,7 +601,7 @@ body {
   padding: 20px;
 }
 
-.modal-content {
+.contenido-modal {
   background: #ffffff;
   width: 100%;
   max-width: 720px;
@@ -632,40 +610,32 @@ body {
   position: relative;
 }
 
-.close-modal { position: absolute; top: 16px; right: 20px; font-size: 28px; font-weight: bold; color: #64748b; cursor: pointer; }
-.modal-video-title { font-size: 18px; font-weight: 800; color: #0e1f87; margin: 0 0 16px 0; }
-.iframe-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background-color: #000000; }
-.iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.cerrar-modal { position: absolute; top: 16px; right: 20px; font-size: 28px; font-weight: bold; color: #64748b; cursor: pointer; }
+.titulo-modal-video { font-size: 18px; font-weight: 800; color: #0e1f87; margin: 0 0 16px 0; }
+.contenedor-reproductor { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background-color: #000000; }
+.contenedor-reproductor iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-/* =========================================================
-   BANNER PROMOCIONAL DE BENEFICIOS Y ALIANZAS
-   ========================================================= */
+.contenedor-banner { max-width: 1250px; margin: 40px auto 40px auto; }
+.tarjeta-banner { position: relative; width: 100%; height: 240px; border-radius: 24px; overflow: hidden; background-color: #1e293b; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); }
+.capa-banner { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.75) 50%, rgba(15, 23, 42, 0.3) 100%); z-index: 2; }
+.contenido-banner { position: relative; z-index: 3; padding: 32px 48px; max-width: 550px; }
+.titulo-banner { font-size: 32px; font-weight: 800; color: #ffffff; margin: 0 0 8px 0; }
+.destacado-banner { font-size: 22px; font-weight: 800; color: #22c55e; margin: 0 0 24px 0; }
+.boton-banner { display: inline-flex; align-items: center; gap: 12px; background-color: #ffffff; color: #0f172a; text-decoration: none; font-size: 13px; font-weight: 700; padding: 10px 20px; border-radius: 30px; }
+.envoltorio-imagen-banner { position: absolute; right: 0; top: 0; width: 65%; height: 100%; z-index: 1; }
+.imagen-banner { width: 100%; height: 100%; object-fit: cover; }
+.puntos-banner { position: absolute; bottom: 20px; right: 32px; z-index: 3; display: flex; align-items: center; gap: 8px; }
+.punto-item { width: 10px; height: 10px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.6); }
+.punto-item.activo { width: 32px; border-radius: 12px; background-color: #22c55e; }
 
-.banner-container { max-width: 1250px; margin: 40px auto 40px auto; }
-.banner-card { position: relative; width: 100%; height: 240px; border-radius: 24px; overflow: hidden; background-color: #1e293b; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); }
-.banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.75) 50%, rgba(15, 23, 42, 0.3) 100%); z-index: 2; }
-.banner-content { position: relative; z-index: 3; padding: 32px 48px; max-width: 550px; }
-.banner-title { font-size: 32px; font-weight: 800; color: #ffffff; margin: 0 0 8px 0; }
-.banner-highlight { font-size: 22px; font-weight: 800; color: #22c55e; margin: 0 0 24px 0; }
-.banner-btn { display: inline-flex; align-items: center; gap: 12px; background-color: #ffffff; color: #0f172a; text-decoration: none; font-size: 13px; font-weight: 700; padding: 10px 20px; border-radius: 30px; }
-.banner-image-wrapper { position: absolute; right: 0; top: 0; width: 65%; height: 100%; z-index: 1; }
-.banner-img { width: 100%; height: 100%; object-fit: cover; }
-.banner-dots { position: absolute; bottom: 20px; right: 32px; z-index: 3; display: flex; align-items: center; gap: 8px; }
-.dot-item { width: 10px; height: 10px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.6); }
-.dot-item.active { width: 32px; border-radius: 12px; background-color: #22c55e; }
-
-/* =========================================================
-   SECCIÓN NUESTRAS VENTAJAS (3 TARJETAS CENTRADAS Y CON ESTILOS EXACTOS)
-   ========================================================= */
-
-.stats-cards-container {
+.contenedor-tarjetas-ventajas {
   max-width: 1100px;
   margin: 0 auto 50px auto;
   display: flex;
   justify-content: center;
 }
 
-.stats-cards-grid {
+.cuadricula-ventajas {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
@@ -673,7 +643,7 @@ body {
   justify-content: center;
 }
 
-.stat-card {
+.tarjeta-ventaja {
   background-color: #fafafa;
   border: 1.5px solid #d1d5db;
   border-radius: 20px;
@@ -688,28 +658,26 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
 }
 
-.stat-card:hover {
+.tarjeta-ventaja:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 30px rgba(225, 29, 72, 0.12);
   border-color: #e11d48;
 }
 
-/* ICONO SUPERIOR */
-.stat-card-icon {
+.icono-tarjeta-ventaja {
   font-size: 20px;
   margin-bottom: 14px;
   filter: grayscale(10%);
 }
 
-/* DATO NUMÉRICO EN ROJO INTENSO */
-.stat-number-wrapper {
+.envoltorio-numero-contador {
   display: flex;
   align-items: baseline;
   justify-content: center;
   margin-bottom: 16px;
 }
 
-.counter-number {
+.numero-contador {
   font-size: 52px;
   font-weight: 900;
   color: #e11d48;
@@ -718,15 +686,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.counter-unit {
+.unidad-contador {
   font-size: 30px;
   font-weight: 800;
   color: #e11d48;
   margin-left: 2px;
 }
 
-/* TÍTULO AZUL Y SUBTÍTULO GRIS */
-.stat-author-name {
+.titulo-tarjeta-ventaja {
   font-size: 17px;
   font-weight: 800;
   color: #0b1953;
@@ -734,7 +701,7 @@ body {
   letter-spacing: -0.2px;
 }
 
-.stat-location {
+.subtitulo-ventaja {
   font-size: 11px;
   font-weight: 800;
   color: #475569;
@@ -743,8 +710,7 @@ body {
   margin-bottom: 18px;
 }
 
-/* LÍNEA SEPARADORA PUNTEADA Y TEXTO DESCRIPTIVO */
-.stat-description {
+.descripcion-ventaja {
   font-size: 12px;
   line-height: 1.55;
   color: #334155;
@@ -755,21 +721,20 @@ body {
   width: 100%;
 }
 
-/* RESPONSIVE */
 @media screen and (max-width: 1024px) {
-  .stats-cards-grid {
+  .cuadricula-ventajas {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 767px) {
   body { padding: 16px; }
-  .intro-cards-grid { grid-template-columns: 1fr; }
-  .dashboard-face { flex-direction: column; position: relative; height: auto; }
-  .dashboard-inner { min-height: auto; }
-  .card-left, .map-right { width: 100%; }
+  .cuadricula-introduccion { grid-template-columns: 1fr; }
+  .cara-panel { flex-direction: column; position: relative; height: auto; }
+  .interior-panel { min-height: auto; }
+  .tarjeta-izquierda, .mapa-derecha { width: 100%; }
 
-  .testimonials-header {
+  .cabecera-testimonios {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
@@ -777,7 +742,7 @@ body {
 }
 
 @media screen and (max-width: 640px) {
-  .stats-cards-grid {
+  .cuadricula-ventajas {
     grid-template-columns: 1fr;
   }
 }

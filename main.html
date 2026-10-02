@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>Egresados</title>
+</head>
+<body>
+
+  <section class="contenedor-introduccion">
+    <div class="etiqueta-introduccion">Propuesta Estratégica</div>
+    <h1 class="titulo-introduccion">Visualización e Impacto de Egresados</h1>
+    <p class="descripcion-introduccion">
+      El objetivo de esta plataforma interactiva es reunir la distribución geográfica, la trayectoria profesional y el testimonio directo de nuestros egresados a nivel nacional e internacional. A continuación, se detallan los componentes principales de este modelo:
+    </p>
+
+    <div class="cuadricula-introduccion">
+      <div class="tarjeta-introduccion">
+        <div class="icono-tarjeta-introduccion">🌐</div>
+        <div class="contenido-tarjeta-introduccion">
+          <h3 class="titulo-tarjeta-introduccion">Idea 1: Cartografía Dinámica</h3>
+          <p class="texto-tarjeta-introduccion">
+            Un panel interactivo en 3D que alterna entre el panorama global y la distribución detallada por departamentos en Colombia.
+          </p>
+        </div>
+      </div>
+
+      <div class="tarjeta-introduccion">
+        <div class="icono-tarjeta-introduccion">🚀</div>
+        <div class="contenido-tarjeta-introduccion">
+          <h3 class="titulo-tarjeta-introduccion">Idea 2: Trayectoria e Impacto</h3>
+          <p class="texto-tarjeta-introduccion">
+            Línea de tiempo de hitos profesionales complementada con testimonios dinámicos en texto y video de la comunidad de graduados.
+          </p>
+        </div>
+      </div>
+
+      <div class="tarjeta-introduccion">
+        <div class="icono-tarjeta-introduccion">👩‍🎓</div>
+        <div class="contenido-tarjeta-introduccion">
+          <h3 class="titulo-tarjeta-introduccion">Idea 3: Datos representativos</h3>
+          <p class="texto-tarjeta-introduccion">
+            Una sección que agrupe los principales datos de egresados de la universidad, como la empleabilidad ETC.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="titulo-principal">EGRESADOS POR EL MUNDO</h2>
+
+  <div class="envoltorio-giro-panel">
+    <div class="interior-panel" id="interiorPanel">
+      
+      <div class="cara-panel cara-frontal">
+        
+        <div class="tarjeta-izquierda">
+          <button class="boton-girar" id="botonVerColombia" title="Ver Departamentos de Colombia">
+            🔄 ver colombia 
+          </button>
+          
+          <div class="metricas">
+            <span class="total-egresados">91</span>
+            <span class="insignia">100% Total</span>
+          </div>
+          
+          <p class="subtitulo">Países de nuestros egresados</p>
+
+          <ul class="lista-paises">
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto estados-unidos"></span>
+                <span>Estados Unidos <sub>US</sub></span>
+              </div>
+              <span class="conteo-egresados">25</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto canada"></span>
+                <span>Canadá <sub>CA</sub></span>
+              </div>
+              <span class="conteo-egresados">11</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto peru"></span>
+                <span>Perú <sub>PE</sub></span>
+              </div>
+              <span class="conteo-egresados">10</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto alemania"></span>
+                <span>Alemania <sub>DE</sub></span>
+              </div>
+              <span class="conteo-egresados">8</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto espana"></span>
+                <span>España <sub>ES</sub></span>
+              </div>
+              <span class="conteo-egresados">8</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto australia"></span>
+                <span>Australia <sub>AU</sub></span>
+              </div>
+              <span class="conteo-egresados">7</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto mexico"></span>
+                <span>México <sub>MX</sub></span>
+              </div>
+              <span class="conteo-egresados">5</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto otros"></span>
+                <span>Otros (11 países)</span>
+              </div>
+              <span class="conteo-egresados">17</span>
+            </li>
+          </ul>
+
+          <div id="panelDetalleMundo" class="panel-detalle-pais">
+            <div class="etiqueta-detalle">País Seleccionado</div>
+            <div id="nombrePaisDetalle" class="nombre-detalle">-</div>
+            <div class="etiqueta-detalle" style="margin-top: 8px;">Egresados Registrados</div>
+            <div id="cantidadEgresadosMundo" class="numero-detalle">0</div>
+          </div>
+        </div>
+
+        <div class="mapa-derecha" id="mapaDerechaMundo">
+          <div id="cuadroFlotanteMundo" class="cuadro-flotante"></div>
+          <div class="lienzo-mapa" id="contenedorMapaMundo"></div>
+        </div>
+
+      </div>
+
+      <div class="cara-panel cara-trasera">
+        
+        <div class="tarjeta-izquierda">
+          <button class="boton-girar" id="botonVerMundo" title="Ver Países del Mundo">
+            🌐 Ver Mundial
+          </button>
+
+          <h2 class="titulo-tarjeta">Egresados</h2>
+          
+          <div class="metricas">
+            <span class="total-egresados">775</span>
+            <span class="insignia insignia-colombia">100% Colombia</span>
+          </div>
+          
+          <p class="subtitulo">Departamentos de Colombia</p>
+
+          <ul class="lista-paises">
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto bogota"></span>
+                <span>Bogotá D.C. <sub>DC</sub></span>
+              </div>
+              <span class="conteo-egresados">645</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto cundinamarca"></span>
+                <span>Cundinamarca <sub>CUN</sub></span>
+              </div>
+              <span class="conteo-egresados">59</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto antioquia"></span>
+                <span>Antioquia <sub>ANT</sub></span>
+              </div>
+              <span class="conteo-egresados">15</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto meta"></span>
+                <span>Meta <sub>MET</sub></span>
+              </div>
+              <span class="conteo-egresados">6</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto atlantico"></span>
+                <span>Atlántico <sub>ATL</sub></span>
+              </div>
+              <span class="conteo-egresados">5</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto tolima"></span>
+                <span>Tolima <sub>TOL</sub></span>
+              </div>
+              <span class="conteo-egresados">3</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto otros-departamentos"></span>
+                <span>Otros dptos</span>
+              </div>
+              <span class="conteo-egresados">9</span>
+            </li>
+            <li class="item-pais">
+              <div class="informacion-pais">
+                <span class="punto no-especifica"></span>
+                <span>No especifica</span>
+              </div>
+              <span class="conteo-egresados">33</span>
+            </li>
+          </ul>
+
+          <div id="panelDetalleColombia" class="panel-detalle-pais">
+            <div class="etiqueta-detalle">Departamento</div>
+            <div id="nombreDepartamentoDetalle" class="nombre-detalle">-</div>
+            <div class="etiqueta-detalle" style="margin-top: 8px;">Egresados Registrados</div>
+            <div id="cantidadEgresadosColombia" class="numero-detalle">0</div>
+          </div>
+        </div>
+
+        <div class="mapa-derecha" id="mapaDerechaColombia">
+          <div id="cuadroFlotanteColombia" class="cuadro-flotante"></div>
+          <div class="lienzo-mapa" id="contenedorMapaColombia"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <h2 class="titulo-principal">HITOS DE NUESTROS EGRESADOS</h2>
+  <section class="contenedor-linea-tiempo">
+    <h2 class="titulo-linea-tiempo">Hitos Institucionales y de Graduados</h2>
+    <div class="envoltorio-linea-tiempo">
+      <div class="pista-linea-tiempo">
+
+        <div class="paso-hito">
+          <div class="etiqueta-año">2001</div>
+          <div class="tarjeta-hito">
+            <div class="icono-hito">🏛️</div>
+            <h3 class="subtitulo-hito">23 de mayo de 2001</h3>
+            <h4 class="nombre-evento-hito">Nace Uniempresarial</h4>
+            <p class="descripcion-hito">
+              Inicio de la Fundación Universitaria Empresarial de la Cámara de Comercio de Bogotá, conectando universidad y empresa.
+            </p>
+          </div>
+        </div>
+
+        <div class="paso-hito">
+          <div class="etiqueta-año">2004</div>
+          <div class="tarjeta-hito">
+            <div class="icono-hito">🎓</div>
+            <h3 class="subtitulo-hito">Primera Promoción</h3>
+            <h4 class="nombre-evento-hito">Primeros Graduados</h4>
+            <p class="descripcion-hito">
+              Uniempresarial entrega sus primeros profesionales al sector empresarial, iniciando una gran comunidad.
+            </p>
+          </div>
+        </div>
+
+        <div class="paso-hito paso-destacado">
+          <div class="etiqueta-año año-destacado">2024</div>
+          <div class="tarjeta-hito">
+            <div class="icono-hito">🏛️</div>
+            <h3 class="subtitulo-hito">Concejo de Bogotá (2024-2027)</h3>
+            <h4 class="nombre-evento-hito">David Saavedra</h4>
+            <p class="descripcion-hito">
+              Administrador de Empresas. Asumió como Concejal de Bogotá impulsando proyectos de participación y seguridad.
+            </p>
+          </div>
+        </div>
+
+        <div class="paso-hito paso-destacado">
+          <div class="etiqueta-año año-destacado">2025</div>
+          <div class="tarjeta-hito">
+            <div class="icono-hito">📊</div>
+            <h3 class="subtitulo-hito">Liderazgo Empresarial</h3>
+            <h4 class="nombre-evento-hito">Juan Sebastián Ávila</h4>
+            <p class="descripcion-hito">
+              Director Nacional de Operaciones de Miniso, compartiendo su experiencia profesional con la comunidad.
+            </p>
+          </div>
+        </div>
+
+        <div class="paso-hito paso-destacado">
+          <div class="etiqueta-año año-dorado">2026</div>
+          <div class="tarjeta-hito">
+            <div class="icono-hito">⭐</div>
+            <h3 class="subtitulo-hito">Estrategia & Reconocimiento</h3>
+            <h4 class="nombre-evento-hito">ROMPELA & Juan Pablo Rojas</h4>
+            <p class="descripcion-hito">
+              Lanzamiento estrategia ROMPELA y reconocimiento a Juan Pablo Rojas León en Inteligencia Artificial (25 años).
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="contenedor-testimonios">
+    <div class="cabecera-testimonios">
+      <div>
+        <h2 class="titulo-testimonios">Opiniones de Nuestros Egresados</h2>
+        <p class="subtitulo-testimonios">Conoce el impacto real de nuestra comunidad en el mundo</p>
+      </div>
+      <div class="controles-carrusel">
+        <button class="boton-control" id="botonAnterior" title="Anterior">←</button>
+        <button class="boton-control" id="botonSiguiente" title="Siguiente">→</button>
+      </div>
+    </div>
+
+    <div class="contenedor-pista-carrusel">
+      <div class="pista-carrusel" id="pistaCarruselTexto">
+
+        <div class="tarjeta-testimonio">
+          <div class="insignia-tipo-tarjeta insignia-texto">💬 Opinión</div>
+          <div class="icono-comillas">“</div>
+          <div class="cuerpo-tarjeta">
+            <p class="texto-testimonio">
+              “Es una alternativa buena de estudio, enfocada en lo que se requiere y con las practicas vitales para el desempeño de cualquier carrera ”
+            </p>
+            <div class="autor-testimonio">
+              <div class="avatar-autor avatar-azul">CP</div>
+              <div class="informacion-autor">
+                <h4 class="nombre-autor">Paola chavez Espinel</h4>
+                <span class="cargo-autor">Finanzas y Comercio Exterior · Bogotá DC</span>
+                <div class="estrellas">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tarjeta-testimonio">
+          <div class="insignia-tipo-tarjeta insignia-texto">💬 Opinión</div>
+          <div class="icono-comillas">“</div>
+          <div class="cuerpo-tarjeta">
+            <p class="texto-testimonio">
+              Como emprendedor es importante la información que recibí y creo puede ser fundamental a futuros emprendedores con sus respectivas actualizaciones 
+            </p>
+            <div class="autor-testimonio">
+              <div class="avatar-autor avatar-verde">AM</div>
+              <div class="informacion-autor">
+                <h4 class="nombre-autor">Wilson Cáceres H</h4>
+                <span class="cargo-autor">Emprendedor · Bogotá D.C.</span>
+                <div class="estrellas">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tarjeta-testimonio">
+          <div class="insignia-tipo-tarjeta insignia-texto">💬 Opinión</div>
+          <div class="icono-comillas">“</div>
+          <div class="cuerpo-tarjeta">
+            <p class="texto-testimonio">
+              “Uniempresarial tiene un plus y es su metodología de enseñanza y prácticas, creo que da un valor agregado a los egresados de la universidad a tener una visión real del ámbito corporativo ”
+            </p>
+            <div class="autor-testimonio">
+              <div class="avatar-autor avatar-naranja">DR</div>
+              <div class="informacion-autor">
+                <h4 class="nombre-autor">Iván Stiven Bonilla Ramirez</h4>
+                <span class="cargo-autor">Finanzas y Comercio Exterior · Bogotá DC</span>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tarjeta-testimonio">
+          <div class="insignia-tipo-tarjeta insignia-texto">💬 Opinión</div>
+          <div class="icono-comillas">“</div>
+          <div class="cuerpo-tarjeta">
+            <p class="texto-testimonio">
+             Es la única universidad que ofrece prácticas empresariales continuas y de valor. He estudiado en muchas universidades y ninguna ofrece este estilo de educación.
+            </p>
+            <div class="autor-testimonio">
+              <div class="avatar-autor avatar-morado">LG</div>
+              <div class="informacion-autor">
+                <h4 class="nombre-autor">Luz katerina gomez parra</h4>
+                <span class="cargo-autor">Asistente administrativa · Australia</span>
+                <div class="estrellas">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="seccion-videos-egresados">
+      <div class="contenedor-pista-carrusel">
+        <div class="pista-carrusel" id="pistaCarruselVideos">
+
+          <div class="tarjeta-testimonio tarjeta-video" onclick="abrirModalVideo('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Juan Castellanos - Testimonio')">
+            <div class="insignia-tipo-tarjeta insignia-video">🎥 Video Testimonio</div>
+            <div class="miniatura-video fondo-video">
+              <div class="superposicion-reproducir">
+                <div class="icono-reproducir">▶</div>
+              </div>
+              <span class="duracion-video">02:10</span>
+            </div>
+            <div class="cuerpo-tarjeta">
+              <p class="texto-testimonio">
+                “ PRÓXIMAMENTE ENCONTRARÁS LOS VIDEOS DE NUESTROS EGRESADOS, ¡GRACIAS POR SU PACIENCIA! ”
+              </p>
+              <div class="autor-testimonio">
+                <div class="avatar-autor avatar-naranja">DR</div>
+                <div class="informacion-autor">
+                  <h4 class="nombre-autor">Juan Castellanos</h4>
+                  <span class="cargo-autor">Ingeniero de software · Bogotá DC</span>
+                  <div class="estrellas">★★★★★</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tarjeta-testimonio tarjeta-video" onclick="abrirModalVideo('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Juan Castellanos - Testimonio')">
+            <div class="insignia-tipo-tarjeta insignia-video">🎥 Video Testimonio</div>
+            <div class="miniatura-video fondo-video">
+              <div class="superposicion-reproducir">
+                <div class="icono-reproducir">▶</div>
+              </div>
+              <span class="duracion-video">02:10</span>
+            </div>
+            <div class="cuerpo-tarjeta">
+              <p class="texto-testimonio">
+                “ PRÓXIMAMENTE ENCONTRARÁS LOS VIDEOS DE NUESTROS EGRESADOS, ¡GRACIAS POR SU PACIENCIA! ”
+              </p>
+              <div class="autor-testimonio">
+                <div class="avatar-autor avatar-naranja">DR</div>
+                <div class="informacion-autor">
+                  <h4 class="nombre-autor">Juan Castellanos</h4>
+                  <span class="cargo-autor">Ingeniero de software · Bogotá DC</span>
+                  <div class="estrellas">★★★★★</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tarjeta-testimonio tarjeta-video" onclick="abrirModalVideo('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Juan Castellanos - Testimonio')">
+            <div class="insignia-tipo-tarjeta insignia-video">🎥 Video Testimonio</div>
+            <div class="miniatura-video fondo-video">
+              <div class="superposicion-reproducir">
+                <div class="icono-reproducir">▶</div>
+              </div>
+              <span class="duracion-video">02:10</span>
+            </div>
+            <div class="cuerpo-tarjeta">
+              <p class="texto-testimonio">
+                “PRÓXIMAMENTE ENCONTRARÁS LOS VIDEOS DE NUESTROS EGRESADOS, ¡GRACIAS POR SU PACIENCIA! ”
+              </p>
+              <div class="autor-testimonio">
+                <div class="avatar-autor avatar-naranja">DR</div>
+                <div class="informacion-autor">
+                  <h4 class="nombre-autor">Juan Castellanos</h4>
+                  <span class="cargo-autor">Ingeniero de software · Bogotá DC</span>
+                  <div class="estrellas">★★★★★</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="modalVideo" class="modal-video" onclick="cerrarModalVideo(event)">
+    <div class="contenido-modal">
+      <span class="cerrar-modal" onclick="cerrarModalVideo(null)">&times;</span>
+      <h3 id="tituloModal" class="titulo-modal-video">Video Testimonio</h3>
+      <div class="contenedor-reproductor">
+        <iframe id="reproductorVideo" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="titulo-principal">NUESTRAS VENTAJAS</h2>
+
+  <section class="contenedor-banner">
+    <div class="tarjeta-banner">
+      <div class="capa-banner"></div>
+      <div class="contenido-banner">
+        <h2 class="titulo-banner">Lo que nos destaca</h2>
+        <p class="destacado-banner">¡Tenemos lo mejor!</p>
+        <a href="#datos" class="boton-banner">
+          <span>Conocer más</span>
+          <span class="icono-boton">v</span>
+        </a>
+      </div>
+      <div class="envoltorio-imagen-banner">
+        <img src="https://uniempresarial.edu.co/wp-content/uploads/2024/06/generative-ai-graduation-ceremony-scaled_11zon-1024x574.jpg" alt="Estudiantes disfrutando de beneficios" class="imagen-banner">
+      </div>
+      <div class="puntos-banner">
+        <span class="punto-item"></span>
+        <span class="punto-item activo"></span>
+        <span class="punto-item"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contenedor-tarjetas-ventajas" id="datos">
+    <div class="cuadricula-ventajas">
+
+      <div class="tarjeta-ventaja">
+        <div class="icono-tarjeta-ventaja">💬</div>
+        <div class="envoltorio-numero-contador">
+          <span class="numero-contador" data-objetivo="88">0</span><span class="unidad-contador">%</span>
+        </div>
+        <h3 class="titulo-tarjeta-ventaja">Tasa de Empleabilidad</h3>
+        <span class="subtitulo-ventaja">Egresados Vinculados</span>
+        <p class="descripcion-ventaja">
+          El 88% de nuestros egresados logra vincularse laboralmente en los primeros 6 meses tras su titulación en empresas de alto impacto.
+        </p>
+      </div>
+
+      <div class="tarjeta-ventaja">
+        <div class="icono-tarjeta-ventaja">📢</div>
+        <div class="envoltorio-numero-contador">
+          <span class="numero-contador" data-objetivo="775">0</span><span class="unidad-contador">+</span>
+        </div>
+        <h3 class="titulo-tarjeta-ventaja">Egresados Nacionales</h3>
+        <span class="subtitulo-ventaja">Colombia</span>
+        <p class="descripcion-ventaja">
+          Comunidad de egresados activos y posicionados en diferentes departamentos y sectores clave del país.
+        </p>
+      </div>
+
+      <div class="tarjeta-ventaja">
+        <div class="icono-tarjeta-ventaja">💼</div>
+        <div class="envoltorio-numero-contador">
+          <span class="numero-contador" data-objetivo="91">0</span><span class="unidad-contador">+</span>
+        </div>
+        <h3 class="titulo-tarjeta-ventaja">Presencia Internacional</h3>
+        <span class="subtitulo-ventaja">17 Países</span>
+        <p class="descripcion-ventaja">
+          Graduados ejerciendo su profesión y liderando proyectos en América, Europa y Oceanía.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
