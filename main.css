@@ -655,94 +655,103 @@ body {
 .dot-item.active { width: 32px; border-radius: 12px; background-color: #22c55e; }
 
 /* =========================================================
-   SECCIÓN NUESTRAS VENTAJAS (3 TARJETAS BLANCAS CON DETALLES ROJOS)
+   SECCIÓN NUESTRAS VENTAJAS (3 TARJETAS CENTRADAS Y CON ESTILOS EXACTOS)
    ========================================================= */
 
 .stats-cards-container {
-  max-width: 1250px;
-  margin: 0 auto 40px auto;
+  max-width: 1100px;
+  margin: 0 auto 50px auto;
+  display: flex;
+  justify-content: center;
 }
 
 .stats-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 Tarjetas en grilla */
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  justify-content: center;
 }
 
 .stat-card {
-  background-color: #faf9f9; /* Fondo claro/blanco */
-  border: 1px solid #0b0c0c;
+  background-color: #fafafa;
+  border: 1.5px solid #d1d5db;
   border-radius: 20px;
-  padding: 32px 24px;
+  padding: 32px 20px 28px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: #000000;
+  color: #1e293b;
   position: relative;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
 }
 
 .stat-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 32px rgba(235, 4, 4, 0.15);
-  border-color: #fc0000;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(225, 29, 72, 0.12);
+  border-color: #e11d48;
 }
 
+/* ICONO SUPERIOR */
 .stat-card-icon {
-  font-size: 22px;
-  margin-bottom: 12px;
+  font-size: 20px;
+  margin-bottom: 14px;
+  filter: grayscale(10%);
 }
 
+/* DATO NUMÉRICO EN ROJO INTENSO */
 .stat-number-wrapper {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .counter-number {
-  font-size: 48px;
-  font-weight: 800;
-  color: #eb0404; /* Rojo destacado */
+  font-size: 52px;
+  font-weight: 900;
+  color: #e11d48;
   line-height: 1;
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .counter-unit {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 800;
-  color: #c52222; /* Rojo para el % o + */
+  color: #e11d48;
   margin-left: 2px;
 }
 
+/* TÍTULO AZUL Y SUBTÍTULO GRIS */
 .stat-author-name {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
-  color: #030092; /* Azul universitario para el título */
+  color: #0b1953;
   margin: 0 0 4px 0;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.2px;
 }
 
 .stat-location {
-  font-size: 12px;
-  font-weight: 700;
-  color: #070707;
+  font-size: 11px;
+  font-weight: 800;
+  color: #475569;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 16px;
+  letter-spacing: 0.6px;
+  margin-bottom: 18px;
 }
 
+/* LÍNEA SEPARADORA PUNTEADA Y TEXTO DESCRIPTIVO */
 .stat-description {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.55;
-  color: #000000;
+  color: #334155;
   margin: 0;
   font-weight: 500;
-  border-top: 1px dashed #cbd5e1;
-  padding-top: 16px;
+  border-top: 1px dotted #cbd5e1;
+  padding-top: 18px;
   width: 100%;
 }
 
@@ -767,7 +776,7 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .stats-cards-grid {
     grid-template-columns: 1fr;
   }
