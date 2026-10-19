@@ -746,3 +746,281 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+.contenedor-sectores-destacados {
+  max-width: 1250px;
+  margin: 0 auto 50px auto;
+  background-color: #f8fafc; /* Fondo gris claro tenue corporativo */
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  gap: 32px;
+  position: relative;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* COLUMNA IZQUIERDA CON AZUL OSCURO INSTITUCIONAL (#0e1f87) */
+.columna-resumen-sectores {
+  position: relative;
+  width: 300px;
+  height: 420px;
+  flex-shrink: 0;
+  background-color: #0e1f87;
+  border-radius: 28px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(14, 31, 135, 0.25);
+}
+
+.insignia-sello-sectores {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  background-color: #e11d48; /* Rojo vivo institucional */
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 16px;
+  padding: 16px 18px;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+  transform: rotate(-10deg);
+}
+
+.titulo-resumen-sectores {
+  font-size: 26px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+}
+
+.descripcion-resumen-sectores {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin: 0 0 24px 0;
+  font-weight: 500;
+}
+
+.badge-destacado-sectores {
+  display: inline-block;
+  background-color: #e11d48; /* Rojo vivo */
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.columna-contenido-sectores {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cabecera-sectores-destacados {
+  margin-bottom: 20px;
+}
+
+.titulo-seccion-sectores {
+  font-size: 26px;
+  font-weight: 900;
+  color: #0e1f87;
+  margin: 0 0 4px 0;
+}
+
+.subtitulo-seccion-sectores {
+  font-size: 13px;
+  color: #475569;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* PISTA DEL CARRUSEL */
+.pista-carrusel-destacados {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 10px 4px 20px 4px;
+}
+
+.pista-carrusel-destacados::-webkit-scrollbar {
+  display: none;
+}
+
+/* TARJETAS BLANCAS CON BORDES DE COLOR Y SOMBRA */
+.tarjeta-sector-institucional {
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 28px 20px;
+  width: 270px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-sector-institucional:hover {
+  transform: translateY(-6px);
+  border-color: #0e1f87;
+  box-shadow: 0 12px 28px rgba(14, 31, 135, 0.15);
+}
+
+.tarjeta-roja-destacada:hover {
+  border-color: #e11d48;
+  box-shadow: 0 12px 28px rgba(225, 29, 72, 0.15);
+}
+
+.icono-flotante-superior {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 18px;
+}
+
+.envoltorio-porcentaje-circulo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #e0e7ff;
+  border: 2px solid #0e1f87;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.circulo-rojo {
+  background-color: #ffe4e6;
+  border-color: #e11d48;
+}
+
+.porcentaje-texto {
+  font-size: 15px;
+  font-weight: 900;
+  color: #0e1f87;
+}
+
+.circulo-rojo .porcentaje-texto {
+  color: #e11d48;
+}
+
+.nombre-sector-institucional {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0e1f87;
+  margin: 0 0 4px 0;
+}
+
+.conteo-egresados-institucional {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.rango-sector-institucional {
+  font-size: 11px;
+  font-weight: 800;
+  color: #e11d48;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
+.descripcion-sector-institucional {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #475569;
+  margin: 0;
+  font-weight: 500;
+  border-top: 1px dotted #e2e8f0;
+  padding-top: 12px;
+  width: 100%;
+}
+
+/* NAVEGACIÓN INFERIOR */
+.pie-navegacion-sectores {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.indicadores-puntos {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.punto-indicador {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+}
+
+.punto-indicador.activo {
+  width: 24px;
+  border-radius: 12px;
+  background-color: #0e1f87;
+}
+
+.botones-flechas-carrusel {
+  display: flex;
+  gap: 12px;
+}
+
+.boton-flecha {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #0e1f87;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.boton-flecha:hover {
+  background-color: #0e1f87;
+  color: #ffffff;
+  border-color: #0e1f87;
+  transform: scale(1.08);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 900px) {
+  .contenedor-sectores-destacados {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .columna-resumen-sectores {
+    width: 100%;
+    height: auto;
+  }
+}
