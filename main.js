@@ -218,3 +218,19 @@ function cerrarModalVideo(evento) {
     reproductor.src = '';
   }
 }
+
+const pistaSectores = document.getElementById('pistaCarruselSectores');
+const botonAnteriorSectores = document.getElementById('botonAnteriorSectores');
+const botonSiguienteSectores = document.getElementById('botonSiguienteSectores');
+const anchoTarjetaSector = 290;
+
+if (botonSiguienteSectores && botonAnteriorSectores) {
+  botonSiguienteSectores.addEventListener('click', () => {
+    pistaSectores.scrollBy({ left: anchoTarjetaSector, behavior: 'smooth' });
+  });
+
+  botonAnteriorSectores.addEventListener('click', () => {
+    pistaSectores.scrollBy({ left: -anchoTarjetaSector, behavior: 'smooth' });
+  });
+}
+
